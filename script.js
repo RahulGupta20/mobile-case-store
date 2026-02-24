@@ -162,16 +162,6 @@ categoryCards.forEach(card => {
     });
 });
 
-// Product card interactions
-productCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.boxShadow = '0 20px 60px rgba(102, 126, 234, 0.3)';
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.boxShadow = '';
-    });
-});
 
 // Newsletter form
 const newsletterForm = document.querySelector('.newsletter-form');
