@@ -14,7 +14,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe all scroll-reveal elements
 document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.category-card, .product-card, .feature-card, .gallery-item, .testimonial-card');
+    const revealElements = document.querySelectorAll('.category-card, .product-card, .feature-card, .gallery-item');
     revealElements.forEach(el => {
         el.classList.add('scroll-reveal');
         observer.observe(el);
@@ -468,12 +468,6 @@ galleryItems.forEach(item => {
             console.log('Gallery item clicked:', img.alt);
         }
     });
-});
-
-// Testimonial card animations
-const testimonialCards = document.querySelectorAll('.testimonial-card');
-testimonialCards.forEach((card, index) => {
-    card.style.animationDelay = `${index * 0.1}s`;
 });
 
 // Initialize animations
