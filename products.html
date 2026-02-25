@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Mobile Cases - CaseCraft</title>
+
+    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md cc-navbar sticky-top">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand cc-logo" href="index.html">CaseCraft</a>
+
+            <!-- Mobile: action icons + toggler -->
+            <div class="d-flex align-items-center gap-2 d-md-none ms-auto">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="cc-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+            <!-- Desktop nav links -->
+            <div class="collapse navbar-collapse justify-content-center d-none d-md-flex">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="cc-nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="cc-nav-link active" href="products.html">Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=airpods">Airpod Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=watch">Watch Straps</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=accessories">Phone Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Desktop action icons -->
+            <div class="nav-actions d-none d-md-flex align-items-center gap-2">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <a href="signin.html" class="icon-btn" aria-label="Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </a>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-start cc-offcanvas" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+        <div class="offcanvas-header">
+            <span class="cc-logo" id="mobileNavLabel">CaseCraft</span>
+            <button type="button" class="cc-offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="cc-mobile-nav-links">
+                <li><a href="index.html" data-bs-dismiss="offcanvas">Home</a></li>
+                <li><a href="products.html" data-bs-dismiss="offcanvas">Cases</a></li>
+                <li><a href="products.html?category=airpods" data-bs-dismiss="offcanvas">Airpod Cases</a></li>
+                <li><a href="products.html?category=watch" data-bs-dismiss="offcanvas">Watch Straps</a></li>
+                <li><a href="products.html?category=accessories" data-bs-dismiss="offcanvas">Phone Accessories</a></li>
+            </ul>
+            <div class="cc-mobile-actions">
+                <a href="signin.html" class="icon-btn" aria-label="Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>My Account</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Page -->
+    <div class="products-page">
+        <div class="container-fluid">
+            <!-- Page Header -->
+            <div class="products-header products-header-v3">
+                <div class="products-header-content">
+                    <div class="products-header-left">
+                        <div class="breadcrumb">
+                            <a href="index.html">Home</a>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <span>Products</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <span>Mobile Cases</span>
+                        </div>
+                        <h1>Mobile Cases</h1>
+                        <div class="products-meta">
+                            <span class="meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                                    <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                                </svg>
+                                124 Products
+                            </span>
+                            <span class="meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                4.8 Average Rating
+                            </span>
+                            <span class="meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                10k+ Customers
+                            </span>
+                        </div>
+                    </div>
+                    <div class="products-header-search">
+                        <div class="search-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                            </svg>
+                            <input type="text" placeholder="Search for cases, brands, models...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Products Layout -->
+            <div class="products-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar" id="filtersSidebar">
+                    <div class="filters-header">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/>
+                                <line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/>
+                                <line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/>
+                                <line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/>
+                                <line x1="17" y1="16" x2="23" y2="16"/>
+                            </svg>
+                            Filters
+                        </h3>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <button class="clear-filters" id="clearFilters">Clear All</button>
+                            <button class="close-filters-btn" id="closeFiltersBtn" aria-label="Close filters">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <div class="filter-title">
+                            <span>Category</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="iphone">
+                                <span>iPhone Cases</span>
+                                <span class="filter-count">(124)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="samsung">
+                                <span>Samsung Cases</span>
+                                <span class="filter-count">(98)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="airpods">
+                                <span>AirPods Cases</span>
+                                <span class="filter-count">(56)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="watch">
+                                <span>Watch Straps</span>
+                                <span class="filter-count">(45)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Brand Filter -->
+                    <div class="filter-group">
+                        <div class="filter-title">
+                            <span>Brand</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="casecraft">
+                                <span>CaseCraft</span>
+                                <span class="filter-count">(156)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="otterbox">
+                                <span>OtterBox</span>
+                                <span class="filter-count">(89)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="spigen">
+                                <span>Spigen</span>
+                                <span class="filter-count">(72)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range Filter -->
+                    <div class="filter-group">
+                        <div class="filter-title">
+                            <span>Price Range</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="filter-options price-range-filter">
+                            <div class="price-inputs">
+                                <input type="number" id="minPrice" placeholder="Min $" value="0">
+                                <input type="number" id="maxPrice" placeholder="Max $" value="100">
+                            </div>
+                            <div class="price-range-slider">
+                                <input type="range" id="priceRange" min="0" max="100" value="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color Filter -->
+                    <div class="filter-group">
+                        <div class="filter-title">
+                            <span>Color</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="color" value="black">
+                                <span>Black</span>
+                                <span class="filter-count">(145)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="color" value="white">
+                                <span>White</span>
+                                <span class="filter-count">(112)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="color" value="blue">
+                                <span>Blue</span>
+                                <span class="filter-count">(78)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="color" value="red">
+                                <span>Red</span>
+                                <span class="filter-count">(65)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div class="filter-group">
+                        <div class="filter-title">
+                            <span>Rating</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="4">
+                                <span>4★ & above</span>
+                                <span class="filter-count">(89)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="3">
+                                <span>3★ & above</span>
+                                <span class="filter-count">(156)</span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="products-content">
+                    <!-- Toolbar -->
+                    <div class="products-toolbar">
+                        <button class="filter-toggle-btn" id="filterToggleBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+                            <span>Filters</span>
+                        </button>
+
+                        <div class="products-count">
+                            Showing <strong id="productCount">24</strong> of <strong>124</strong> products
+                        </div>
+
+                        <div class="toolbar-actions">
+                            <div class="view-toggle">
+                                <button class="active" data-view="grid" aria-label="Grid view">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                                </button>
+                                <button data-view="list" aria-label="List view">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                                </button>
+                            </div>
+
+                            <div class="sort-dropdown">
+                                <select id="sortSelect">
+                                    <option value="featured">Featured</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="newest">Newest First</option>
+                                    <option value="rating">Highest Rated</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Product Card 1 -->
+                        <div class="product-card">
+                            <a href="#" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop" alt="Premium Leather Case">
+                                <span class="product-badge hot">Hot</span>
+                                <button class="wishlist-btn" aria-label="Add to wishlist">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                    </svg>
+                                </button>
+                            </a>
+                            <a href="#">
+                                <div class="product-info">
+                                    <span class="product-brand">CaseCraft</span>
+                                    <h3 class="product-name">Premium Leather MagSafe Case with Card Holder</h3>
+                                    <p class="product-model">iPhone 15 Pro / Pro Max</p>
+                                    <div class="product-footer">
+                                        <span class="old-price">$69.99</span>
+                                        <span class="price">$49.99</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Product Card 2 -->
+                        <div class="product-card">
+                            <a href="#" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop" alt="Clear Case">
+                                <span class="product-badge new">New</span>
+                                <button class="wishlist-btn" aria-label="Add to wishlist">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                    </svg>
+                                </button>
+                            </a>
+                            <a href="#">
+                                <div class="product-info">
+                                    <span class="product-brand">CaseCraft</span>
+                                    <h3 class="product-name">Crystal Clear MagSafe Case – Ultra-Thin Transparent Protection</h3>
+                                    <p class="product-model">All iPhone Models</p>
+                                    <div class="product-footer">
+                                        <span class="price">$29.99</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Product Card 3 -->
+                        <div class="product-card">
+                            <a href="#" class="product-image">
+                                <img src="https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400&h=400&fit=crop" alt="Rugged Case">
+                                <span class="product-badge sale">Sale</span>
+                                <button class="wishlist-btn" aria-label="Add to wishlist">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                    </svg>
+                                </button>
+                            </a>
+                            <a href="#">
+                                <div class="product-info">
+                                    <span class="product-brand">CaseCraft</span>
+                                    <h3 class="product-name">Rugged Armor Pro Case – Military Grade Drop Protection</h3>
+                                    <p class="product-model">Samsung S24 Ultra</p>
+                                    <div class="product-footer">
+                                        <span class="old-price">$59.99</span>
+                                        <span class="price">$39.99</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Product Card 4 -->
+                        <div class="product-card">
+                            <a href="#" class="product-image">
+                                <img src="assets/images/airpod-case2.png" alt="AirPods Case">
+                                <button class="wishlist-btn" aria-label="Add to wishlist">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                    </svg>
+                                </button>
+                            </a>
+                            <a href="#">
+                                <div class="product-info">
+                                    <span class="product-brand">CaseCraft</span>
+                                    <h3 class="product-name">GripLine SlimFit Case – MagSafe Compatible Hybrid iPhone Case</h3>
+                                    <p class="product-model">iPhone 15 Pro / Pro Max</p>
+                                    <div class="product-footer">
+                                        <span class="old-price">$49.99</span>
+                                        <span class="price">$39.99</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Product Card 5 -->
+                        <div class="product-card">
+                            <a href="#" class="product-image">
+                                <img src="assets/images/MagSafeSilicone.jpeg" alt="MagSafe Case">
+                                <span class="product-badge hot">Hot</span>
+                                <button class="wishlist-btn" aria-label="Add to wishlist">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                    </svg>
+                                </button>
+                            </a>
+                            <a href="#">
+                                <div class="product-info">
+                                    <span class="product-brand">CaseCraft</span>
+                                    <h3 class="product-name">MagLine XT – Premium Carbon Fiber Texture MagSafe Case</h3>
+                                    <p class="product-model">iPhone 14 Series</p>
+                                    <div class="product-footer">
+                                        <span class="old-price">$54.99</span>
+                                        <span class="price">$44.99</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Product Card 6 -->
+                        <div class="product-card">
+                            <a href="#" class="product-image">
+                                <img src="assets/images/RuggedShockproof.jpg" alt="Rugged Case">
+                                <span class="product-badge new">New</span>
+                                <button class="wishlist-btn" aria-label="Add to wishlist">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                    </svg>
+                                </button>
+                            </a>
+                            <a href="#">
+                                <div class="product-info">
+                                    <span class="product-brand">CaseCraft</span>
+                                    <h3 class="product-name">Carbon Elite Case – Military Grade Drop Protection Technology</h3>
+                                    <p class="product-model">iPhone 13 / 13 Pro</p>
+                                    <div class="product-footer">
+                                        <span class="old-price">$44.99</span>
+                                        <span class="price">$34.99</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination-wrapper">
+                        <ul class="pagination">
+                            <li class="disabled">
+                                <button aria-label="Previous">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                </button>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <button aria-label="Next">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Overlay (Mobile) -->
+    <div class="filter-overlay" id="filterOverlay"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="footer-content">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <span class="footer-logo-text">Case<span class="gradient-text">Craft</span></span>
+                    </div>
+                    <p class="footer-desc">Premium tech accessories designed for the modern lifestyle.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html">Mobile Cases</a></li>
+                        <li><a href="products.html?category=airpods">AirPods Cases</a></li>
+                        <li><a href="products.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CaseCraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Filter Toggle (All Devices)
+            $('#filterToggleBtn').on('click', function() {
+                $('#filtersSidebar').addClass('show');
+                $('#filterOverlay').addClass('show');
+                $('body').css('overflow', 'hidden'); // Prevent body scroll when filters open
+            });
+
+            // Close Filters
+            $('#closeFiltersBtn, #filterOverlay').on('click', function() {
+                $('#filtersSidebar').removeClass('show');
+                $('#filterOverlay').removeClass('show');
+                $('body').css('overflow', ''); // Restore body scroll
+            });
+
+            // View Toggle
+            $('.view-toggle button').on('click', function() {
+                const view = $(this).data('view');
+                $('.view-toggle button').removeClass('active');
+                $(this).addClass('active');
+
+                if (view === 'list') {
+                    $('#productsGrid').addClass('list-view');
+                } else {
+                    $('#productsGrid').removeClass('list-view');
+                }
+            });
+
+            // Wishlist Toggle
+            $('.wishlist-btn').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $(this).toggleClass('active');
+
+                // Toggle fill for active state
+                const svg = $(this).find('svg');
+                if ($(this).hasClass('active')) {
+                    svg.attr('fill', 'currentColor');
+                } else {
+                    svg.attr('fill', 'none');
+                }
+            });
+
+            // Filter Collapse
+            $('.filter-title').on('click', function() {
+                $(this).toggleClass('collapsed');
+                $(this).next('.filter-options').slideToggle(300);
+            });
+
+            // Clear Filters
+            $('#clearFilters').on('click', function() {
+                $('input[type="checkbox"]').prop('checked', false);
+                $('input[type="radio"]').prop('checked', false);
+                $('#minPrice').val(0);
+                $('#maxPrice').val(100);
+                $('#priceRange').val(100);
+            });
+
+            // Price Range
+            $('#priceRange').on('input', function() {
+                $('#maxPrice').val($(this).val());
+            });
+        });
+    </script>
+</body>
+</html>

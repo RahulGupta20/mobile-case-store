@@ -1,0 +1,32 @@
+// ═══════════════════════════════════════════════════════════
+// Products SCSS - CaseCraft E-commerce
+// Compiles to: products.css and products.min.css
+// Used by: products.html (Product Listing Page)
+// ═══════════════════════════════════════════════════════════
+
+// 1. Import CSS Variables
+@import 'base/css-variables';
+
+// 2. Import Custom Variables
+@import 'base/variables';
+
+// 3. Import Bootstrap (from node_modules)
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// 4. Import Base Utilities (must come after Bootstrap)
+@import 'base/utilities';
+
+// 5. Import Navbar Component
+@import 'components/cstm-navbar';
+
+// 6. Import Footer Component
+@import 'components/cstm-footer';
+
+// 7. Import Products Page Styles
+@import 'pages/products';
+
+// ═══════════════════════════════════════════════════════════
+// Note: This file is dedicated to the products listing page
+// It includes its own compilation of Bootstrap and components
+// to keep it separate from main.css (used by homepage)
+// ═══════════════════════════════════════════════════════════

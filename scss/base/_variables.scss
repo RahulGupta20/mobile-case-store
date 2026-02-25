@@ -24,6 +24,10 @@ $text-secondary: rgba(255, 255, 255, 0.75);
 $text-muted: rgba(255, 255, 255, 0.45);
 $body-color: $text-primary;
 
+// Glassmorphism
+$glass-bg: rgba(255, 255, 255, 0.04);
+$glass-border: rgba(137, 92, 242, 0.25);
+
 // Spacing (compatible with Bootstrap)
 $spacer: 1rem;
 $spacing-xs: $spacer * 0.5;
@@ -60,7 +64,7 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1180px,
-  xxl: 1400px  // Custom max-width to match styles.css
+  xxl: 1400px
 ) !default;
 
 // Container Padding (Override Bootstrap)
