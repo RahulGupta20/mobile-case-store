@@ -1,0 +1,15 @@
+// ═══════════════════════════════════════════════════════════════
+// Utilities - Custom utility classes and Bootstrap overrides
+// ═══════════════════════════════════════════════════════════════
+
+// ─── Container Responsive Padding ──────────────────────────────
+// Override Bootstrap container padding on mobile devices
+// Base padding: 2rem (set via $container-padding-x)
+// Mobile padding: 1.25rem (on screens ≤768px)
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}

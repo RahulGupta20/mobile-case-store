@@ -1,0 +1,239 @@
+// ═══════════════════════════════════════════════════════════════
+// Custom Navbar Component - CaseCraft
+// Glassmorphism navbar with mobile offcanvas drawer
+// ═══════════════════════════════════════════════════════════════
+
+.cc-navbar {
+    background: rgba(7, 14, 72, 0.65) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba($primary, 0.15);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    padding: 0.9rem 0;
+    z-index: 200;
+
+    &.scrolled {
+        background: rgba(8, 16, 82, 0.94) !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    }
+}
+
+// ─── Logo ──────────────────────────────────────────────────────
+.cc-logo {
+    font-size: 1.75rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1px;
+    animation: gradientShift 4s linear infinite;
+    text-decoration: none;
+}
+
+// ─── Desktop Navigation Links ──────────────────────────────────
+.cc-nav-link {
+    color: $text-secondary !important;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.3s ease;
+    position: relative;
+    text-decoration: none;
+    padding: 0.25rem 0 !important;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient-primary);
+        transition: width 0.3s ease;
+    }
+
+    &:hover {
+        color: $text-primary !important;
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+// ─── Action Icon Buttons ───────────────────────────────────────
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.icon-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    padding: 0.65rem;
+    color: $text-primary;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    &:hover {
+        background: var(--glass-border);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-glow);
+    }
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: var(--accent-gradient);
+    background-size: 200% auto;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    box-shadow: 0 2px 8px rgba(245, 87, 108, 0.4);
+    animation: gradientShift 4s linear infinite;
+}
+
+// ─── Hamburger Toggler ─────────────────────────────────────────
+.cc-toggler {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 0.65rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+
+    span {
+        width: 22px;
+        height: 2px;
+        background: $text-primary;
+        border-radius: 2px;
+        transition: 0.3s;
+        display: block;
+    }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Mobile Offcanvas Drawer
+// ═══════════════════════════════════════════════════════════════
+
+.cc-offcanvas {
+    width: 280px !important;
+    background: linear-gradient(160deg, $bg-primary 0%, $bg-secondary 100%) !important;
+    border-right: 1px solid rgba($primary, 0.25) !important;
+
+    .offcanvas-header {
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid rgba($primary, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .offcanvas-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+.cc-offcanvas-close {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem;
+    color: $text-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba($primary, 0.15);
+        border-color: rgba($primary, 0.4);
+    }
+}
+
+// ─── Mobile Navigation Links ───────────────────────────────────
+.cc-mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+
+    li a {
+        display: block;
+        padding: 1rem 0.5rem;
+        font-size: 1.0625rem;
+        font-weight: 600;
+        color: $text-secondary;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: color 0.25s ease, padding-left 0.25s ease;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: width 0.25s ease;
+        }
+
+        &:hover {
+            color: $text-primary;
+            padding-left: 1rem;
+
+            &::before {
+                width: 6px;
+            }
+        }
+    }
+}
+
+// ─── Mobile Account Button ─────────────────────────────────────
+.cc-mobile-actions {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    .icon-btn {
+        width: 100%;
+        justify-content: flex-start;
+        border-radius: var(--radius-sm);
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: $text-secondary;
+
+        &:hover {
+            color: $text-primary;
+            transform: none;
+        }
+    }
+}

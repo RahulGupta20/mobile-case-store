@@ -165,23 +165,25 @@ categoryCards.forEach(card => {
 
 // Newsletter form
 const newsletterForm = document.querySelector('.newsletter-form');
-newsletterForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const input = newsletterForm.querySelector('input');
-    const email = input.value;
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = newsletterForm.querySelector('input');
+        const email = input.value;
 
-    if (email) {
-        showNotification('Thanks for subscribing!');
-        input.value = '';
+        if (email) {
+            showNotification('Thanks for subscribing!');
+            input.value = '';
 
-        // Add success animation
-        const button = newsletterForm.querySelector('button');
-        button.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            button.style.transform = '';
-        }, 200);
-    }
-});
+            // Add success animation
+            const button = newsletterForm.querySelector('button');
+            button.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                button.style.transform = '';
+            }, 200);
+        }
+    });
+}
 
 // Hero CTA buttons
 const ctaButtons = document.querySelectorAll('.hero-cta .btn');

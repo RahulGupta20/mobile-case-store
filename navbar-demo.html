@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Demo - Logged In State</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Demo page specific styles */
+        .demo-container {
+            padding: 4rem 2rem;
+            min-height: 100vh;
+        }
+        .demo-section {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .demo-title {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .demo-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        .demo-note {
+            background: rgba(137, 92, 242, 0.1);
+            border-left: 3px solid var(--accent-color);
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            margin-top: 1rem;
+        }
+        /* Force the dropdown to be visible for demo */
+        .demo-dropdown-open .user-dropdown-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+            position: relative !important;
+            top: 0.5rem !important;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation - Logged In State -->
+    <nav class="navbar navbar-expand-md cc-navbar sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand cc-logo" href="index.html">CaseCraft</a>
+
+            <!-- Mobile: action icons + toggler -->
+            <div class="d-flex align-items-center gap-2 d-md-none ms-auto">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </button>
+                <!-- Hamburger toggler — opens offcanvas -->
+                <button class="cc-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+            <!-- Desktop nav links (md and up) -->
+            <div class="collapse navbar-collapse justify-content-center d-none d-md-flex">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="cc-nav-link" href="#shop">Home</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="#categories">Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="#new">Airpod Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="#sale">Watch Straps</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="#about">Phone Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Desktop action icons (md and up) -->
+            <div class="nav-actions d-none d-md-flex align-items-center gap-2">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+
+                <!-- Logged In State (VISIBLE for demo) -->
+                <div class="user-dropdown-wrapper" style="display: flex;">
+                    <button class="user-dropdown-btn" aria-label="User menu" aria-expanded="false">
+                        <div class="user-avatar">
+                            <span class="user-avatar-text">RK</span>
+                        </div>
+                        <span class="user-name d-none d-lg-inline">Rahul Kumar</span>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="user-dropdown-menu">
+                        <div class="user-dropdown-header">
+                            <div class="user-dropdown-avatar">
+                                <span class="user-avatar-text">RK</span>
+                            </div>
+                            <div class="user-dropdown-info">
+                                <div class="user-dropdown-name">Rahul Kumar</div>
+                                <div class="user-dropdown-email">rahul@example.com</div>
+                            </div>
+                        </div>
+                        <div class="user-dropdown-divider"></div>
+                        <a href="#" class="user-dropdown-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <span>My Account</span>
+                        </a>
+                        <a href="#" class="user-dropdown-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/>
+                            </svg>
+                            <span>Orders</span>
+                        </a>
+                        <a href="change-password.html" class="user-dropdown-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <span>Change Password</span>
+                        </a>
+                        <div class="user-dropdown-divider"></div>
+                        <button class="user-dropdown-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+                            </svg>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Drawer (slides left → right) -->
+    <div class="offcanvas offcanvas-start cc-offcanvas" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+        <div class="offcanvas-header">
+            <span class="cc-logo" id="mobileNavLabel">CaseCraft</span>
+            <button type="button" class="cc-offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="cc-mobile-nav-links">
+                <li><a href="#shop" data-bs-dismiss="offcanvas">Home</a></li>
+                <li><a href="#categories" data-bs-dismiss="offcanvas">Cases</a></li>
+                <li><a href="#new" data-bs-dismiss="offcanvas">Airpod Cases</a></li>
+                <li><a href="#sale" data-bs-dismiss="offcanvas">Watch Straps</a></li>
+                <li><a href="#about" data-bs-dismiss="offcanvas">Phone Accessories</a></li>
+            </ul>
+            <div class="cc-mobile-actions">
+                <!-- Mobile Logged In State (VISIBLE for demo) -->
+                <div class="mobile-user-menu" style="display: block;">
+                    <div class="mobile-user-header">
+                        <div class="user-avatar">
+                            <span class="user-avatar-text">RK</span>
+                        </div>
+                        <div class="mobile-user-info">
+                            <div class="mobile-user-name">Rahul Kumar</div>
+                            <div class="mobile-user-email">rahul@example.com</div>
+                        </div>
+                    </div>
+                    <div class="mobile-user-links">
+                        <a href="#" class="mobile-user-link" data-bs-dismiss="offcanvas">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <span>My Account</span>
+                        </a>
+                        <a href="#" class="mobile-user-link" data-bs-dismiss="offcanvas">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/>
+                            </svg>
+                            <span>Orders</span>
+                        </a>
+                        <a href="change-password.html" class="mobile-user-link" data-bs-dismiss="offcanvas">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <span>Change Password</span>
+                        </a>
+                        <button class="mobile-user-link mobile-logout-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+                            </svg>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Content -->
+    <div class="demo-container">
+        <div class="container">
+            <div class="demo-section">
+                <h1 class="demo-title">Navbar Demo - Logged In State</h1>
+                <p class="demo-description">
+                    This page shows how the navbar looks when a user is logged in.
+                </p>
+
+                <h3 style="color: var(--text-primary); margin-top: 2rem;">Desktop View (≥768px)</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li><strong>User Avatar:</strong> Shows initials "RK" with gradient background</li>
+                    <li><strong>User Name:</strong> "Rahul Kumar" (visible on large screens)</li>
+                    <li><strong>Dropdown Arrow:</strong> Click to toggle the dropdown menu</li>
+                    <li><strong>Dropdown Menu:</strong> Contains user info, links to My Account, Orders, Change Password, and Logout button</li>
+                </ul>
+
+                <h3 style="color: var(--text-primary); margin-top: 2rem;">Mobile View (<768px)</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Click the hamburger menu (three lines) in the top right</li>
+                    <li>The mobile menu will slide in from the left</li>
+                    <li>Shows user header with avatar, name, and email</li>
+                    <li>Contains all user menu options below the navigation links</li>
+                </ul>
+
+                <div class="demo-note">
+                    <strong>Note:</strong> On the actual site, this logged-in state will only show when a user has successfully logged in through the signin page. The JavaScript automatically switches between logged-out and logged-in states based on localStorage.
+                </div>
+
+                <div class="demo-note" style="margin-top: 1rem;">
+                    <strong>Interactive Demo:</strong> Click the user avatar/name in the navbar above to see the dropdown menu open!
+                </div>
+            </div>
+
+            <div class="demo-section demo-dropdown-open">
+                <h2 class="demo-title">Dropdown Menu Preview (Always Open)</h2>
+                <p class="demo-description">Below is what the dropdown menu looks like when opened:</p>
+
+                <div class="user-dropdown-wrapper" style="display: inline-flex; position: relative;">
+                    <button class="user-dropdown-btn" aria-label="User menu" aria-expanded="true">
+                        <div class="user-avatar">
+                            <span class="user-avatar-text">RK</span>
+                        </div>
+                        <span class="user-name">Rahul Kumar</span>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform: rotate(180deg);">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="user-dropdown-menu show">
+                        <div class="user-dropdown-header">
+                            <div class="user-dropdown-avatar">
+                                <span class="user-avatar-text">RK</span>
+                            </div>
+                            <div class="user-dropdown-info">
+                                <div class="user-dropdown-name">Rahul Kumar</div>
+                                <div class="user-dropdown-email">rahul@example.com</div>
+                            </div>
+                        </div>
+                        <div class="user-dropdown-divider"></div>
+                        <a href="#" class="user-dropdown-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <span>My Account</span>
+                        </a>
+                        <a href="#" class="user-dropdown-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/>
+                            </svg>
+                            <span>Orders</span>
+                        </a>
+                        <a href="change-password.html" class="user-dropdown-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <span>Change Password</span>
+                        </a>
+                        <div class="user-dropdown-divider"></div>
+                        <button class="user-dropdown-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+                            </svg>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple dropdown toggle for demo
+        document.querySelectorAll('.user-dropdown-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const menu = this.nextElementSibling;
+                const isOpen = menu.classList.contains('show');
+
+                if (isOpen) {
+                    menu.classList.remove('show');
+                    this.setAttribute('aria-expanded', 'false');
+                } else {
+                    menu.classList.add('show');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.user-dropdown-menu').forEach(menu => {
+                if (!menu.closest('.demo-dropdown-open')) {
+                    menu.classList.remove('show');
+                    menu.previousElementSibling?.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

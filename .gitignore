@@ -1,0 +1,46 @@
+# Node modules
+node_modules/
+
+# Source maps
+*.css.map
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Package lock
+package-lock.json
+
+# ═══════════════════════════════════════════
+# What IS committed to Git:
+# ═══════════════════════════════════════════
+# ✅ main.css (compiled CSS from SCSS - general)
+# ✅ main.min.css (minified for production)
+# ✅ auth.css (compiled CSS from SCSS - authentication)
+# ✅ auth.min.css (minified for production)
+# ✅ styles.css (existing site styles)
+# ✅ package.json (for npm install)
+# ✅ All HTML files
+# ✅ All JS files
+# ✅ Documentation (.md files)
+# ✅ scss/ folder (SCSS source files)
+#
+# ❌ node_modules/ (install via npm install)
+# ❌ *.css.map (not needed)

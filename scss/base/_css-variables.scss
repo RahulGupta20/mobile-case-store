@@ -1,0 +1,79 @@
+// ═══════════════════════════════════════════════════════════════
+// CSS Custom Properties (:root variables)
+// These are the CSS variables used throughout the site
+// ═══════════════════════════════════════════════════════════════
+
+:root {
+    /* ── Accent palette (single source of truth) ── */
+    --accent-color:           #895cf2;
+    --accent-secondary-color: #EC4899;
+    --accent-gradient: linear-gradient(to right, var(--accent-color) 0%, var(--accent-secondary-color) 50%, var(--accent-color) 100%);
+    --accent-gradient-diag: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary-color) 100%);
+
+    /* Gradients — now derived from accent */
+    --gradient-primary:   linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-accent:    linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary-color) 100%);
+    --gradient-success:   linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --gradient-sunset:    linear-gradient(135deg, #895cf2 0%, #EC4899 100%);
+    --gradient-ocean:     linear-gradient(135deg, #667eea 0%, #3B82F6 100%);
+
+    /* Modern Dark Theme */
+    --bg-primary: #040b3a;
+    --bg-secondary: #080f52;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --bg-glass: rgba(255, 255, 255, 0.08);
+
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.75);
+    --text-muted: rgba(255, 255, 255, 0.45);
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(137, 92, 242, 0.25);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+
+    /* Glow Effects — derived from accent */
+    --glow-primary:   rgba(137, 92, 242, 0.5);
+    --glow-secondary: rgba(236, 72, 153, 0.35);
+    --glow-accent:    rgba(236, 72, 153, 0.45);
+
+    /* Modern Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.25);
+    --shadow-glow: 0 0 40px var(--glow-primary);
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+
+    /* Border Radius */
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Animations
+// ═══════════════════════════════════════════════════════════════
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33%      { transform: translate(30px, -30px) rotate(120deg); }
+    66%      { transform: translate(-20px, 20px) rotate(240deg); }
+}

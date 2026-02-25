@@ -1,0 +1,31 @@
+// ═══════════════════════════════════════════════════════════════
+// Authentication SCSS - CaseCraft E-commerce
+// Compiles to: auth.css and auth.min.css
+// Used by: signin.html, signup.html
+// ═══════════════════════════════════════════════════════════════
+
+// 1. Import CSS Custom Properties (:root variables)
+@import 'base/css-variables';
+
+// 2. Import SCSS Variables (must be before Bootstrap to override)
+@import 'base/variables';
+
+// 3. Import Bootstrap (from node_modules)
+// Bootstrap is customized with our variables above
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// 4. Import Base Utilities (must come after Bootstrap)
+@import 'base/utilities';
+
+// 5. Import Components
+@import 'components/cstm-navbar';
+@import 'components/cstm-footer';
+
+// 6. Import Authentication Page Styles
+@import 'pages/auth';
+
+// ═══════════════════════════════════════════════════════════════
+// Note: This file is specifically for authentication pages
+// Homepage (index.html) uses styles.css
+// Auth pages (signin.html, signup.html) use auth.css
+// ═══════════════════════════════════════════════════════════════

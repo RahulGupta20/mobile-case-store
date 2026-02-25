@@ -1,0 +1,61 @@
+// ═══════════════════════════════════════════════════════════════
+// Main SCSS - CaseCraft E-commerce
+// Compiles to: main.css and main.min.css
+// Used by: Homepage and general site-wide styles
+// ═══════════════════════════════════════════════════════════════
+
+// 1. Import Custom Variables
+@import 'base/variables';
+
+// 2. Import Bootstrap (from node_modules)
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// 3. Import Base Utilities (must come after Bootstrap)
+@import 'base/utilities';
+
+// 4. Import Components (add more as needed)
+// @import 'components/buttons';
+// @import 'components/cards';
+
+// ═══════════════════════════════════════════════════════════════
+// Note: Homepage (index.html) uses styles.css
+// Auth pages (signin.html, signup.html) use auth.css (separate compilation)
+//
+// Deprecation Warnings:
+// - These warnings come from Bootstrap 5.3, not our code
+// - Bootstrap will update to @use/@forward in Bootstrap 6
+// - CSS compiles successfully, warnings are safe to ignore
+// ═══════════════════════════════════════════════════════════════
+
+// ═══════════════════════════════════════════════════════════════
+// Notes for Development:
+// ═══════════════════════════════════════════════════════════════
+//
+// Setup:
+// 1. Run: npm install
+// 2. Run: npm run sass (watch mode) or npm run sass:build (production)
+//
+// Structure:
+// scss/
+// ├── base/
+// │   ├── _variables.scss    (theme colors, spacing, etc.)
+// │   ├── _mixins.scss        (reusable SCSS mixins)
+// │   └── _reset.scss         (CSS resets)
+// ├── components/
+// │   ├── _buttons.scss       (button styles)
+// │   ├── _forms.scss         (form elements)
+// │   ├── _navbar.scss        (navigation)
+// │   └── _cards.scss         (card components)
+// ├── pages/
+// │   ├── _auth.scss          (signin/signup pages)
+// │   ├── _home.scss          (homepage specific)
+// │   └── _product.scss       (product pages)
+// └── main.scss               (main import file)
+//
+// Migration Strategy:
+// 1. Keep existing styles.css as-is
+// 2. New features use SCSS modules
+// 3. Gradually extract components from styles.css to SCSS modules
+// 4. Finally, compile everything into one optimized CSS file
+//
+// ═══════════════════════════════════════════════════════════════

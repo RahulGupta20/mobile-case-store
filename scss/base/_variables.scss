@@ -1,0 +1,78 @@
+// ═══════════════════════════════════════════════════════════════
+// Variables - Theme Colors and Configuration
+// Import this before Bootstrap to override Bootstrap variables
+// ═══════════════════════════════════════════════════════════════
+
+// Accent Colors (Override Bootstrap primary/secondary)
+$primary: #895cf2;
+$secondary: #EC4899;
+$accent-color: $primary;
+$accent-secondary-color: $secondary;
+
+// Gradients
+$accent-gradient: linear-gradient(to right, $accent-color 0%, $accent-secondary-color 50%, $accent-color 100%);
+$accent-gradient-diag: linear-gradient(135deg, $accent-color 0%, $accent-secondary-color 100%);
+
+// Background Colors
+$bg-primary: #040b3a;
+$bg-secondary: #080f52;
+$body-bg: $bg-primary;
+
+// Text Colors
+$text-primary: #ffffff;
+$text-secondary: rgba(255, 255, 255, 0.75);
+$text-muted: rgba(255, 255, 255, 0.45);
+$body-color: $text-primary;
+
+// Spacing (compatible with Bootstrap)
+$spacer: 1rem;
+$spacing-xs: $spacer * 0.5;
+$spacing-sm: $spacer;
+$spacing-md: $spacer * 1.5;
+$spacing-lg: $spacer * 2;
+$spacing-xl: $spacer * 3;
+
+// Border Radius (Override Bootstrap)
+$border-radius: 12px;
+$border-radius-sm: 8px;
+$border-radius-lg: 20px;
+$border-radius-xl: 24px;
+
+// Transitions
+$transition-base: all 0.2s ease-in-out;
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Breakpoints (Bootstrap compatible)
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Container Max Widths (Override Bootstrap)
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1180px,
+  xxl: 1400px  // Custom max-width to match styles.css
+) !default;
+
+// Container Padding (Override Bootstrap)
+$container-padding-x: 2rem !default;  // Match styles.css padding
+
+// Custom breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+
+// Enable/Disable Bootstrap features
+$enable-gradients: true;
+$enable-shadows: true;
+$enable-smooth-scroll: true;
