@@ -115,6 +115,46 @@
     margin-top: -0.25rem;
 }
 
+// Password Input Wrapper with Toggle
+.password-input-wrapper {
+    position: relative;
+    width: 100%;
+
+    input {
+        padding-right: 3rem;
+    }
+}
+
+.password-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    &:focus {
+        outline: none;
+        color: $accent-color;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 .form-options {
     display: flex;
     justify-content: space-between;
