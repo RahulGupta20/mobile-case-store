@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Leather MagSafe Case - CaseCraft</title>
+
+    <link rel="stylesheet" href="assets/css/product-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md cc-navbar sticky-top">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand cc-logo" href="index.html">CaseCraft</a>
+
+            <!-- Mobile: action icons + toggler -->
+            <div class="d-flex align-items-center gap-2 d-md-none ms-auto">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="cc-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+            <!-- Desktop nav links -->
+            <div class="collapse navbar-collapse justify-content-center d-none d-md-flex">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="cc-nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="cc-nav-link active" href="products.html">Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=airpods">Airpod Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=watch">Watch Straps</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=accessories">Phone Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Desktop action icons -->
+            <div class="nav-actions d-none d-md-flex align-items-center gap-2">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <a href="signin.html" class="icon-btn" aria-label="Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </a>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-start cc-offcanvas" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+        <div class="offcanvas-header">
+            <span class="cc-logo" id="mobileNavLabel">CaseCraft</span>
+            <button type="button" class="cc-offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="cc-mobile-nav-links">
+                <li><a href="index.html" data-bs-dismiss="offcanvas">Home</a></li>
+                <li><a href="products.html" data-bs-dismiss="offcanvas">Cases</a></li>
+                <li><a href="products.html?category=airpods" data-bs-dismiss="offcanvas">Airpod Cases</a></li>
+                <li><a href="products.html?category=watch" data-bs-dismiss="offcanvas">Watch Straps</a></li>
+                <li><a href="products.html?category=accessories" data-bs-dismiss="offcanvas">Phone Accessories</a></li>
+            </ul>
+            <div class="cc-mobile-actions">
+                <a href="signin.html" class="icon-btn" aria-label="Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>My Account</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Page -->
+    <div class="product-detail-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                <a href="products.html">Products</a>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                <span>Premium Leather MagSafe Case</span>
+            </nav>
+
+            <!-- Product Main Section -->
+            <div class="product-main">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=800&h=800&fit=crop" alt="Premium Leather Case" id="mainImage">
+                        <span class="product-badge hot">Hot</span>
+                        <button class="wishlist-btn" aria-label="Add to wishlist">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=200&h=200&fit=crop" alt="View 1" class="active">
+                        <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=200&h=200&fit=crop" alt="View 2">
+                        <img src="https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=200&h=200&fit=crop" alt="View 3">
+                        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=200&h=200&fit=crop&sat=-100" alt="View 4">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <span class="product-brand">CaseCraft</span>
+                    <h1 class="product-title">Premium Leather MagSafe Case with Card Holder</h1>
+
+                    <!-- Rating -->
+                    <div class="product-rating">
+                        <div class="stars">
+                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.1)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <span class="rating-text">4.0 (128 reviews)</span>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="product-price">
+                        <span class="current-price">$49.99</span>
+                        <span class="original-price">$69.99</span>
+                        <span class="discount-badge">28% OFF</span>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="product-description">
+                        Experience premium protection with genuine leather craftsmanship. This MagSafe-compatible case features a built-in card holder and military-grade drop protection, combining style and functionality.
+                    </p>
+
+                    <!-- Color Selection -->
+                    <div class="product-option">
+                        <label class="option-label">Color</label>
+                        <div class="color-options">
+                            <button class="color-option active" data-color="black" aria-label="Black"></button>
+                            <button class="color-option" data-color="brown" aria-label="Brown"></button>
+                            <button class="color-option" data-color="navy" aria-label="Navy"></button>
+                            <button class="color-option" data-color="red" aria-label="Red"></button>
+                        </div>
+                    </div>
+
+                    <!-- Model Selection -->
+                    <div class="product-option">
+                        <label class="option-label">Select Model</label>
+                        <div class="model-options">
+                            <button class="model-option active">iPhone 15 Pro Max</button>
+                            <button class="model-option">iPhone 15 Pro</button>
+                            <button class="model-option">iPhone 15</button>
+                            <button class="model-option">iPhone 14 Pro Max</button>
+                            <button class="model-option">iPhone 14 Pro</button>
+                            <button class="model-option">iPhone 14</button>
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="product-option">
+                        <label class="option-label">Quantity</label>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="decreaseQty">−</button>
+                            <input type="number" value="1" min="1" max="10" id="quantity">
+                            <button class="qty-btn" id="increaseQty">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                            </svg>
+                            Add to Cart
+                        </button>
+                        <button class="btn-buy-now">Buy Now</button>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            <div>
+                                <strong>Drop Protection</strong>
+                                <span>Military-grade certified</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            </svg>
+                            <div>
+                                <strong>Free Shipping</strong>
+                                <span>On orders over $50</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                            <div>
+                                <strong>Easy Returns</strong>
+                                <span>30-day return policy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details Tabs -->
+            <div class="product-details-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="specifications">Specifications</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews (128)</button>
+                </div>
+
+                <div class="tabs-content">
+                    <!-- Description Tab -->
+                    <div class="tab-panel active" id="description">
+                        <h3>Product Description</h3>
+                        <p>Crafted from premium full-grain leather, this MagSafe case offers sophisticated protection for your iPhone. The integrated card holder securely stores up to 3 cards, while the precision-cut openings ensure easy access to all buttons and ports.</p>
+                        <p>The case features raised edges around the camera and screen for added protection, and the soft microfiber lining prevents scratches. MagSafe technology enables fast wireless charging and seamless attachment of MagSafe accessories.</p>
+                        <ul>
+                            <li>Genuine leather construction with natural grain texture</li>
+                            <li>Built-in card holder with RFID protection</li>
+                            <li>MagSafe compatible for wireless charging</li>
+                            <li>Military-grade drop protection (tested to 10 feet)</li>
+                            <li>Raised bezels protect camera and screen</li>
+                            <li>Soft microfiber interior lining</li>
+                            <li>Precise cutouts for all ports and buttons</li>
+                        </ul>
+                    </div>
+
+                    <!-- Specifications Tab -->
+                    <div class="tab-panel" id="specifications">
+                        <h3>Technical Specifications</h3>
+                        <table class="specs-table">
+                            <tr><td>Material</td><td>Genuine Leather, Polycarbonate</td></tr>
+                            <tr><td>Compatibility</td><td>iPhone 15, 14, 13 series</td></tr>
+                            <tr><td>MagSafe</td><td>Yes, full compatibility</td></tr>
+                            <tr><td>Card Capacity</td><td>3 cards</td></tr>
+                            <tr><td>Drop Protection</td><td>Military-grade (10 ft)</td></tr>
+                            <tr><td>Weight</td><td>45g (1.6 oz)</td></tr>
+                            <tr><td>Thickness</td><td>3mm</td></tr>
+                            <tr><td>Warranty</td><td>Lifetime warranty</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div class="tab-panel" id="reviews">
+                        <h3>Customer Reviews</h3>
+                        <div class="reviews-summary">
+                            <div class="rating-overview">
+                                <span class="big-rating">4.0</span>
+                                <div>
+                                    <div class="stars">
+                                        <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                        <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                        <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                        <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                        <svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.1)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    </div>
+                                    <p>Based on 128 reviews</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Individual Reviews -->
+                        <div class="review-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div>
+                                        <strong>Sarah M.</strong>
+                                        <div class="stars small">
+                                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2 days ago</span>
+                                </div>
+                                <p class="review-text">Absolutely love this case! The leather quality is outstanding and the card holder is so convenient. Definitely worth the price.</p>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div>
+                                        <strong>Michael R.</strong>
+                                        <div class="stars small">
+                                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                            <svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                            <svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.1)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">1 week ago</span>
+                                </div>
+                                <p class="review-text">Great protection and the MagSafe works perfectly. The leather feels premium and ages beautifully.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <h2>You May Also Like</h2>
+                <div class="products-grid">
+                    <!-- Related Product 1 -->
+                    <div class="product-card">
+                        <a href="#" class="product-image">
+                            <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop" alt="Clear Case">
+                            <span class="product-badge new">New</span>
+                            <button class="wishlist-btn" aria-label="Add to wishlist">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </a>
+                        <a href="#">
+                            <div class="product-info">
+                                <span class="product-brand">CaseCraft</span>
+                                <h3 class="product-name">Crystal Clear MagSafe Case</h3>
+                                <p class="product-model">All iPhone Models</p>
+                                <div class="product-footer">
+                                    <span class="price">$29.99</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Related Product 2 -->
+                    <div class="product-card">
+                        <a href="#" class="product-image">
+                            <img src="https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400&h=400&fit=crop" alt="Rugged Case">
+                            <button class="wishlist-btn" aria-label="Add to wishlist">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </a>
+                        <a href="#">
+                            <div class="product-info">
+                                <span class="product-brand">CaseCraft</span>
+                                <h3 class="product-name">Rugged Armor Pro Case</h3>
+                                <p class="product-model">Samsung S24 Ultra</p>
+                                <div class="product-footer">
+                                    <span class="old-price">$59.99</span>
+                                    <span class="price">$39.99</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Related Product 3 -->
+                    <div class="product-card">
+                        <a href="#" class="product-image">
+                            <img src="assets/images/MagSafeSilicone.jpeg" alt="MagSafe Case">
+                            <span class="product-badge hot">Hot</span>
+                            <button class="wishlist-btn" aria-label="Add to wishlist">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </a>
+                        <a href="#">
+                            <div class="product-info">
+                                <span class="product-brand">CaseCraft</span>
+                                <h3 class="product-name">MagLine XT Carbon Fiber Case</h3>
+                                <p class="product-model">iPhone 14 Series</p>
+                                <div class="product-footer">
+                                    <span class="old-price">$54.99</span>
+                                    <span class="price">$44.99</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Related Product 4 -->
+                    <div class="product-card">
+                        <a href="#" class="product-image">
+                            <img src="assets/images/RuggedShockproof.jpg" alt="Rugged Case">
+                            <button class="wishlist-btn" aria-label="Add to wishlist">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </button>
+                        </a>
+                        <a href="#">
+                            <div class="product-info">
+                                <span class="product-brand">CaseCraft</span>
+                                <h3 class="product-name">Carbon Elite Military Case</h3>
+                                <p class="product-model">iPhone 13 / 13 Pro</p>
+                                <div class="product-footer">
+                                    <span class="old-price">$44.99</span>
+                                    <span class="price">$34.99</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CaseCraft. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Image Gallery
+            $('.thumbnail-images img').on('click', function() {
+                const newSrc = $(this).attr('src').replace('w=200&h=200', 'w=800&h=800');
+                $('#mainImage').attr('src', newSrc);
+                $('.thumbnail-images img').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // Color Selection
+            $('.color-option').on('click', function() {
+                $('.color-option').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // Model Selection
+            $('.model-option').on('click', function() {
+                $('.model-option').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // Quantity
+            $('#increaseQty').on('click', function() {
+                const qty = parseInt($('#quantity').val());
+                if (qty < 10) $('#quantity').val(qty + 1);
+            });
+
+            $('#decreaseQty').on('click', function() {
+                const qty = parseInt($('#quantity').val());
+                if (qty > 1) $('#quantity').val(qty - 1);
+            });
+
+            // Tabs
+            $('.tab-btn').on('click', function() {
+                const tab = $(this).data('tab');
+                $('.tab-btn').removeClass('active');
+                $(this).addClass('active');
+                $('.tab-panel').removeClass('active');
+                $('#' + tab).addClass('active');
+            });
+
+            // Wishlist
+            $('.wishlist-btn').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $(this).toggleClass('active');
+                const svg = $(this).find('svg');
+                if ($(this).hasClass('active')) {
+                    svg.attr('fill', 'currentColor');
+                } else {
+                    svg.attr('fill', 'none');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
