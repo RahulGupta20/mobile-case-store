@@ -241,3 +241,12 @@
         }
     }
 }
+
+
+.cc-navbar {
+    .navbar-nav {
+        @media(min-width: 1024px) {
+            align-items: center;
+        }
+    }
+}

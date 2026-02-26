@@ -309,6 +309,47 @@
             font-size: 0.8125rem;
         }
     }
+
+    // Brand Group with Expandable Models
+    .filter-brand-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+
+        .filter-brand-trigger {
+            position: relative;
+            padding-right: 1.5rem;
+
+            .expand-icon {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: transform 0.3s ease;
+                color: $text-muted;
+            }
+
+            &.expanded .expand-icon {
+                transform: translateY(-50%) rotate(90deg);
+            }
+        }
+
+        .filter-models {
+            max-height: 0;
+            overflow: hidden;
+            padding-left: 2rem;
+            transition: max-height 0.3s ease;
+
+            &.show {
+                max-height: 1000px;
+            }
+
+            .filter-model {
+                padding: 0.5rem 0;
+                font-size: 0.8125rem;
+            }
+        }
+    }
 }
 
 // Price Range Filter
