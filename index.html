@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CaseCraft - Premium Mobile Cases & Tech Accessories</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,13 +13,18 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md cc-navbar sticky-top">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg cc-navbar sticky-top">
+        <div class="container-fluid">
+            <!-- Hamburger toggler (mobile + tablet, left of logo) -->
+            <button class="cc-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+
             <!-- Logo -->
             <a class="navbar-brand cc-logo" href="#">CaseCraft</a>
 
-            <!-- Mobile: action icons + toggler -->
-            <div class="d-flex align-items-center gap-2 d-md-none ms-auto">
+            <!-- Mobile + Tablet: action icons on right -->
+            <div class="d-flex align-items-center gap-2 d-lg-none ms-auto">
                 <button class="icon-btn search-btn" aria-label="Search">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                 </button>
@@ -28,25 +32,28 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
                     <span class="cart-count">0</span>
                 </button>
-                <!-- Hamburger toggler — opens offcanvas -->
-                <button class="cc-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
-                    <span></span><span></span><span></span>
-                </button>
             </div>
 
-            <!-- Desktop nav links (md and up) -->
-            <div class="collapse navbar-collapse justify-content-center d-none d-md-flex">
+            <!-- Desktop nav links (lg and up) -->
+            <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex">
                 <ul class="navbar-nav gap-4">
                     <li class="nav-item"><a class="cc-nav-link" href="#shop">Home</a></li>
-                    <li class="nav-item"><a class="cc-nav-link" href="#categories">Cases</a></li>
+                    <li class="nav-item">
+                        <a class="cc-nav-link" href="#categories" id="phoneCasesTrigger">
+                            Phone Cases
+                            <svg class="dropdown-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                    </li>
                     <li class="nav-item"><a class="cc-nav-link" href="#new">Airpod Cases</a></li>
                     <li class="nav-item"><a class="cc-nav-link" href="#sale">Watch Straps</a></li>
-                    <li class="nav-item"><a class="cc-nav-link" href="#about">Phone Accessories</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="#about">Accessories</a></li>
                 </ul>
             </div>
 
-            <!-- Desktop action icons (md and up) -->
-            <div class="nav-actions d-none d-md-flex align-items-center gap-2">
+            <!-- Desktop action icons (lg and up) -->
+            <div class="nav-actions d-none d-lg-flex align-items-center gap-2">
                 <button class="icon-btn search-btn" aria-label="Search">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                 </button>
@@ -114,6 +121,326 @@
         </div>
     </nav>
 
+    <!-- Mega Menu Overlay -->
+    <div class="mega-menu-overlay" id="megaMenuOverlay"></div>
+
+    <!-- Mega Menu -->
+    <div class="mega-menu" id="megaMenu">
+        <div class="mega-menu-inner">
+            <!-- Left Sidebar: Brand List -->
+            <div class="mega-menu-sidebar">
+                <div class="mega-menu-sidebar-header">
+                    <h3>Select Brand</h3>
+                    <p>Choose your phone brand</p>
+                </div>
+                <ul class="brand-list">
+                    <li><button class="brand-btn active" data-brand="apple">Apple</button></li>
+                    <li><button class="brand-btn" data-brand="samsung">Samsung</button></li>
+                    <li><button class="brand-btn" data-brand="google">Google</button></li>
+                    <li><button class="brand-btn" data-brand="oneplus">OnePlus</button></li>
+                    <li><button class="brand-btn" data-brand="xiaomi">Xiaomi</button></li>
+                    <li><button class="brand-btn" data-brand="oppo">OPPO</button></li>
+                    <li><button class="brand-btn" data-brand="vivo">Vivo</button></li>
+                    <li><button class="brand-btn" data-brand="realme">Realme</button></li>
+                    <li><button class="brand-btn" data-brand="motorola">Motorola</button></li>
+                    <li><button class="brand-btn" data-brand="nokia">Nokia</button></li>
+                    <li><button class="brand-btn" data-brand="huawei">Huawei</button></li>
+                    <li><button class="brand-btn" data-brand="sony">Sony</button></li>
+                    <li><button class="brand-btn" data-brand="asus">ASUS</button></li>
+                    <li><button class="brand-btn" data-brand="nothing">Nothing</button></li>
+                    <li><button class="brand-btn" data-brand="lg">LG</button></li>
+                </ul>
+            </div>
+
+            <!-- Right Content: Models Grid -->
+            <div class="mega-menu-main">
+                <!-- Apple Brand Content -->
+                <div class="brand-content active" id="brand-apple">
+                    <h4 class="brand-title">Apple iPhone</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>iPhone 16 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=iphone16-pro-max">iPhone 16 Pro Max</a></li>
+                                <li><a href="products.html?model=iphone16-pro">iPhone 16 Pro</a></li>
+                                <li><a href="products.html?model=iphone16-plus">iPhone 16 Plus</a></li>
+                                <li><a href="products.html?model=iphone16">iPhone 16</a></li>
+                            </ul>
+                        </div>
+                        <div class="series-card">
+                            <h5>iPhone 15 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=iphone15-pro-max">iPhone 15 Pro Max</a></li>
+                                <li><a href="products.html?model=iphone15-pro">iPhone 15 Pro</a></li>
+                                <li><a href="products.html?model=iphone15-plus">iPhone 15 Plus</a></li>
+                                <li><a href="products.html?model=iphone15">iPhone 15</a></li>
+                            </ul>
+                        </div>
+                        <div class="series-card">
+                            <h5>iPhone 14 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=iphone14-pro-max">iPhone 14 Pro Max</a></li>
+                                <li><a href="products.html?model=iphone14-pro">iPhone 14 Pro</a></li>
+                                <li><a href="products.html?model=iphone14-plus">iPhone 14 Plus</a></li>
+                                <li><a href="products.html?model=iphone14">iPhone 14</a></li>
+                            </ul>
+                        </div>
+                        <div class="series-card">
+                            <h5>iPhone 13 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=iphone13-pro-max">iPhone 13 Pro Max</a></li>
+                                <li><a href="products.html?model=iphone13-pro">iPhone 13 Pro</a></li>
+                                <li><a href="products.html?model=iphone13">iPhone 13</a></li>
+                                <li><a href="products.html?model=iphone13-mini">iPhone 13 Mini</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Samsung Brand Content -->
+                <div class="brand-content" id="brand-samsung">
+                    <h4 class="brand-title">Samsung Galaxy</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>Galaxy S24 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=s24-ultra">Galaxy S24 Ultra</a></li>
+                                <li><a href="products.html?model=s24-plus">Galaxy S24+</a></li>
+                                <li><a href="products.html?model=s24">Galaxy S24</a></li>
+                            </ul>
+                        </div>
+                        <div class="series-card">
+                            <h5>Galaxy S23 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=s23-ultra">Galaxy S23 Ultra</a></li>
+                                <li><a href="products.html?model=s23-plus">Galaxy S23+</a></li>
+                                <li><a href="products.html?model=s23">Galaxy S23</a></li>
+                            </ul>
+                        </div>
+                        <div class="series-card">
+                            <h5>Galaxy Z Fold</h5>
+                            <ul>
+                                <li><a href="products.html?model=z-fold6">Galaxy Z Fold 6</a></li>
+                                <li><a href="products.html?model=z-fold5">Galaxy Z Fold 5</a></li>
+                                <li><a href="products.html?model=z-fold4">Galaxy Z Fold 4</a></li>
+                            </ul>
+                        </div>
+                        <div class="series-card">
+                            <h5>Galaxy Z Flip</h5>
+                            <ul>
+                                <li><a href="products.html?model=z-flip6">Galaxy Z Flip 6</a></li>
+                                <li><a href="products.html?model=z-flip5">Galaxy Z Flip 5</a></li>
+                                <li><a href="products.html?model=z-flip4">Galaxy Z Flip 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Brand Content -->
+                <div class="brand-content" id="brand-google">
+                    <h4 class="brand-title">Google Pixel</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>Pixel 9 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=pixel9-pro-xl">Pixel 9 Pro XL</a></li>
+                                <li><a href="products.html?model=pixel9-pro">Pixel 9 Pro</a></li>
+                                <li><a href="products.html?model=pixel9">Pixel 9</a></li>
+                            </ul>
+                        </div>
+                        <div class="series-card">
+                            <h5>Pixel 8 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=pixel8-pro">Pixel 8 Pro</a></li>
+                                <li><a href="products.html?model=pixel8">Pixel 8</a></li>
+                            </ul>
+                        </div>
+                        <div class="series-card">
+                            <h5>Pixel 7 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=pixel7-pro">Pixel 7 Pro</a></li>
+                                <li><a href="products.html?model=pixel7">Pixel 7</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OnePlus Brand Content -->
+                <div class="brand-content" id="brand-oneplus">
+                    <h4 class="brand-title">OnePlus</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>OnePlus 12 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=oneplus12-pro">OnePlus 12 Pro</a></li>
+                                <li><a href="products.html?model=oneplus12">OnePlus 12</a></li>
+                                <li><a href="products.html?model=oneplus12r">OnePlus 12R</a></li>
+                            </ul>
+                        </div>
+                        <div class="series-card">
+                            <h5>OnePlus 11 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=oneplus11">OnePlus 11</a></li>
+                                <li><a href="products.html?model=oneplus11r">OnePlus 11R</a></li>
+                            </ul>
+                        </div>
+                        <div class="series-card">
+                            <h5>OnePlus Nord</h5>
+                            <ul>
+                                <li><a href="products.html?model=nord3">Nord 3</a></li>
+                                <li><a href="products.html?model=nord-ce3">Nord CE 3</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Brands Placeholder -->
+                <div class="brand-content" id="brand-xiaomi">
+                    <h4 class="brand-title">Xiaomi</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>Xiaomi 14 Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=xiaomi14-ultra">Xiaomi 14 Ultra</a></li>
+                                <li><a href="products.html?model=xiaomi14-pro">Xiaomi 14 Pro</a></li>
+                                <li><a href="products.html?model=xiaomi14">Xiaomi 14</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-content" id="brand-oppo">
+                    <h4 class="brand-title">OPPO</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>Find X Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=findx7-ultra">Find X7 Ultra</a></li>
+                                <li><a href="products.html?model=findx7-pro">Find X7 Pro</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-content" id="brand-vivo">
+                    <h4 class="brand-title">Vivo</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>X Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=vivox100-pro">X100 Pro</a></li>
+                                <li><a href="products.html?model=vivox100">X100</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-content" id="brand-realme">
+                    <h4 class="brand-title">Realme</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>GT Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=realme-gt5">Realme GT 5</a></li>
+                                <li><a href="products.html?model=realme-gt3">Realme GT 3</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-content" id="brand-motorola">
+                    <h4 class="brand-title">Motorola</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>Edge Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=edge40-pro">Edge 40 Pro</a></li>
+                                <li><a href="products.html?model=edge40">Edge 40</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-content" id="brand-nokia">
+                    <h4 class="brand-title">Nokia</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>G Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=nokia-g60">Nokia G60</a></li>
+                                <li><a href="products.html?model=nokia-g50">Nokia G50</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-content" id="brand-huawei">
+                    <h4 class="brand-title">Huawei</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>P Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=p60-pro">P60 Pro</a></li>
+                                <li><a href="products.html?model=p60">P60</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-content" id="brand-sony">
+                    <h4 class="brand-title">Sony</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>Xperia Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=xperia-1v">Xperia 1 V</a></li>
+                                <li><a href="products.html?model=xperia-5v">Xperia 5 V</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-content" id="brand-asus">
+                    <h4 class="brand-title">ASUS</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>ROG Phone</h5>
+                            <ul>
+                                <li><a href="products.html?model=rog8-pro">ROG Phone 8 Pro</a></li>
+                                <li><a href="products.html?model=rog8">ROG Phone 8</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-content" id="brand-nothing">
+                    <h4 class="brand-title">Nothing</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>Phone Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=nothing-phone2">Phone (2)</a></li>
+                                <li><a href="products.html?model=nothing-phone1">Phone (1)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-content" id="brand-lg">
+                    <h4 class="brand-title">LG</h4>
+                    <div class="series-grid">
+                        <div class="series-card">
+                            <h5>Wing Series</h5>
+                            <ul>
+                                <li><a href="products.html?model=lg-wing">LG Wing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Mobile Offcanvas Drawer (slides left → right) -->
     <div class="offcanvas offcanvas-start cc-offcanvas" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
         <div class="offcanvas-header">
@@ -123,13 +450,159 @@
             </button>
         </div>
         <div class="offcanvas-body">
-            <ul class="cc-mobile-nav-links">
-                <li><a href="#shop" data-bs-dismiss="offcanvas">Home</a></li>
-                <li><a href="#categories" data-bs-dismiss="offcanvas">Cases</a></li>
-                <li><a href="#new" data-bs-dismiss="offcanvas">Airpod Cases</a></li>
-                <li><a href="#sale" data-bs-dismiss="offcanvas">Watch Straps</a></li>
-                <li><a href="#about" data-bs-dismiss="offcanvas">Phone Accessories</a></li>
-            </ul>
+            <!-- Main Menu -->
+            <div class="mobile-slide-menu active" id="mobileMainMenu">
+                <ul class="cc-mobile-nav-links">
+                    <li><a href="#shop" data-bs-dismiss="offcanvas">Home</a></li>
+                    <li>
+                        <a href="#" class="mobile-slide-trigger" data-target="brandMenu">
+                            Phone Cases
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </li>
+                    <li><a href="#new" data-bs-dismiss="offcanvas">Airpod Cases</a></li>
+                    <li><a href="#sale" data-bs-dismiss="offcanvas">Watch Straps</a></li>
+                    <li><a href="#about" data-bs-dismiss="offcanvas">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Brand Menu -->
+            <div class="mobile-slide-menu" id="mobileBrandMenu">
+                <div class="mobile-menu-header">
+                    <button class="mobile-back-btn" data-back="mainMenu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Back
+                    </button>
+                    <h3>Select Brand</h3>
+                </div>
+                <ul class="cc-mobile-nav-links">
+                    <li><a href="#" class="mobile-slide-trigger" data-target="appleMenu" data-brand="apple">Apple</a></li>
+                    <li><a href="#" class="mobile-slide-trigger" data-target="samsungMenu" data-brand="samsung">Samsung</a></li>
+                    <li><a href="#" class="mobile-slide-trigger" data-target="googleMenu" data-brand="google">Google</a></li>
+                    <li><a href="#" class="mobile-slide-trigger" data-target="oneplusMenu" data-brand="oneplus">OnePlus</a></li>
+                    <li><a href="products.html?brand=xiaomi" data-bs-dismiss="offcanvas">Xiaomi</a></li>
+                    <li><a href="products.html?brand=oppo" data-bs-dismiss="offcanvas">OPPO</a></li>
+                    <li><a href="products.html?brand=vivo" data-bs-dismiss="offcanvas">Vivo</a></li>
+                    <li><a href="products.html?brand=realme" data-bs-dismiss="offcanvas">Realme</a></li>
+                    <li><a href="products.html?brand=motorola" data-bs-dismiss="offcanvas">Motorola</a></li>
+                    <li><a href="products.html?brand=nokia" data-bs-dismiss="offcanvas">Nokia</a></li>
+                    <li><a href="products.html?brand=huawei" data-bs-dismiss="offcanvas">Huawei</a></li>
+                    <li><a href="products.html?brand=sony" data-bs-dismiss="offcanvas">Sony</a></li>
+                    <li><a href="products.html?brand=asus" data-bs-dismiss="offcanvas">ASUS</a></li>
+                    <li><a href="products.html?brand=nothing" data-bs-dismiss="offcanvas">Nothing</a></li>
+                    <li><a href="products.html?brand=lg" data-bs-dismiss="offcanvas">LG</a></li>
+                </ul>
+            </div>
+
+            <!-- Apple Models Menu -->
+            <div class="mobile-slide-menu" id="mobileAppleMenu">
+                <div class="mobile-menu-header">
+                    <button class="mobile-back-btn" data-back="brandMenu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Back
+                    </button>
+                    <h3>Apple iPhone</h3>
+                </div>
+                <ul class="cc-mobile-nav-links">
+                    <li class="mobile-series-header">iPhone 16 Series</li>
+                    <li><a href="products.html?model=iphone16-pro-max" data-bs-dismiss="offcanvas">iPhone 16 Pro Max</a></li>
+                    <li><a href="products.html?model=iphone16-pro" data-bs-dismiss="offcanvas">iPhone 16 Pro</a></li>
+                    <li><a href="products.html?model=iphone16-plus" data-bs-dismiss="offcanvas">iPhone 16 Plus</a></li>
+                    <li><a href="products.html?model=iphone16" data-bs-dismiss="offcanvas">iPhone 16</a></li>
+
+                    <li class="mobile-series-header">iPhone 15 Series</li>
+                    <li><a href="products.html?model=iphone15-pro-max" data-bs-dismiss="offcanvas">iPhone 15 Pro Max</a></li>
+                    <li><a href="products.html?model=iphone15-pro" data-bs-dismiss="offcanvas">iPhone 15 Pro</a></li>
+                    <li><a href="products.html?model=iphone15-plus" data-bs-dismiss="offcanvas">iPhone 15 Plus</a></li>
+                    <li><a href="products.html?model=iphone15" data-bs-dismiss="offcanvas">iPhone 15</a></li>
+
+                    <li class="mobile-series-header">iPhone 14 Series</li>
+                    <li><a href="products.html?model=iphone14-pro-max" data-bs-dismiss="offcanvas">iPhone 14 Pro Max</a></li>
+                    <li><a href="products.html?model=iphone14-pro" data-bs-dismiss="offcanvas">iPhone 14 Pro</a></li>
+                    <li><a href="products.html?model=iphone14-plus" data-bs-dismiss="offcanvas">iPhone 14 Plus</a></li>
+                    <li><a href="products.html?model=iphone14" data-bs-dismiss="offcanvas">iPhone 14</a></li>
+                </ul>
+            </div>
+
+            <!-- Samsung Models Menu -->
+            <div class="mobile-slide-menu" id="mobileSamsungMenu">
+                <div class="mobile-menu-header">
+                    <button class="mobile-back-btn" data-back="brandMenu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Back
+                    </button>
+                    <h3>Samsung Galaxy</h3>
+                </div>
+                <ul class="cc-mobile-nav-links">
+                    <li class="mobile-series-header">Galaxy S24 Series</li>
+                    <li><a href="products.html?model=s24-ultra" data-bs-dismiss="offcanvas">Galaxy S24 Ultra</a></li>
+                    <li><a href="products.html?model=s24-plus" data-bs-dismiss="offcanvas">Galaxy S24+</a></li>
+                    <li><a href="products.html?model=s24" data-bs-dismiss="offcanvas">Galaxy S24</a></li>
+
+                    <li class="mobile-series-header">Galaxy S23 Series</li>
+                    <li><a href="products.html?model=s23-ultra" data-bs-dismiss="offcanvas">Galaxy S23 Ultra</a></li>
+                    <li><a href="products.html?model=s23-plus" data-bs-dismiss="offcanvas">Galaxy S23+</a></li>
+                    <li><a href="products.html?model=s23" data-bs-dismiss="offcanvas">Galaxy S23</a></li>
+
+                    <li class="mobile-series-header">Galaxy Z Fold</li>
+                    <li><a href="products.html?model=z-fold6" data-bs-dismiss="offcanvas">Galaxy Z Fold 6</a></li>
+                    <li><a href="products.html?model=z-fold5" data-bs-dismiss="offcanvas">Galaxy Z Fold 5</a></li>
+                </ul>
+            </div>
+
+            <!-- Google Models Menu -->
+            <div class="mobile-slide-menu" id="mobileGoogleMenu">
+                <div class="mobile-menu-header">
+                    <button class="mobile-back-btn" data-back="brandMenu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Back
+                    </button>
+                    <h3>Google Pixel</h3>
+                </div>
+                <ul class="cc-mobile-nav-links">
+                    <li class="mobile-series-header">Pixel 9 Series</li>
+                    <li><a href="products.html?model=pixel9-pro-xl" data-bs-dismiss="offcanvas">Pixel 9 Pro XL</a></li>
+                    <li><a href="products.html?model=pixel9-pro" data-bs-dismiss="offcanvas">Pixel 9 Pro</a></li>
+                    <li><a href="products.html?model=pixel9" data-bs-dismiss="offcanvas">Pixel 9</a></li>
+
+                    <li class="mobile-series-header">Pixel 8 Series</li>
+                    <li><a href="products.html?model=pixel8-pro" data-bs-dismiss="offcanvas">Pixel 8 Pro</a></li>
+                    <li><a href="products.html?model=pixel8" data-bs-dismiss="offcanvas">Pixel 8</a></li>
+                </ul>
+            </div>
+
+            <!-- OnePlus Models Menu -->
+            <div class="mobile-slide-menu" id="mobileOneplusMenu">
+                <div class="mobile-menu-header">
+                    <button class="mobile-back-btn" data-back="brandMenu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Back
+                    </button>
+                    <h3>OnePlus</h3>
+                </div>
+                <ul class="cc-mobile-nav-links">
+                    <li class="mobile-series-header">OnePlus 12 Series</li>
+                    <li><a href="products.html?model=oneplus12-pro" data-bs-dismiss="offcanvas">OnePlus 12 Pro</a></li>
+                    <li><a href="products.html?model=oneplus12" data-bs-dismiss="offcanvas">OnePlus 12</a></li>
+
+                    <li class="mobile-series-header">OnePlus 11 Series</li>
+                    <li><a href="products.html?model=oneplus11" data-bs-dismiss="offcanvas">OnePlus 11</a></li>
+                    <li><a href="products.html?model=oneplus11r" data-bs-dismiss="offcanvas">OnePlus 11R</a></li>
+                </ul>
+            </div>
+
             <div class="cc-mobile-actions">
                 <!-- Mobile Logged Out State -->
                 <a href="signin.html" class="icon-btn" aria-label="Account" id="mobileAccountBtnLoggedOut">
@@ -176,6 +649,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 
@@ -235,7 +709,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="hero-grid">
 
                 <!-- Hero Brand Cell -->
@@ -366,7 +840,7 @@
 
     <!-- Product Type List -->
     <section class="shop-categories" id="product-types">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-11 mx-auto">
                     <div class="section-header-row d-none">
@@ -430,7 +904,7 @@
 
     <!-- Promo banner small -->
     <section class="promo-banner-small">
-        <div class="container">
+        <div class="container-fluid">
             <div class="promo-banner-wrapper">
                 <div class="banner-image-wrap">
                     <img src="assets/images/banner-9.jpg" alt="Free Shipping Promo">
@@ -449,7 +923,7 @@
 
     <!-- Mobile Case Best Selling -->
     <section class="shop-categories mobile-case-section" id="mobile-case-best-selling">
-        <div class="container">
+        <div class="container-fluid">
             <div class="section-header-row">
                 <h2 class="section-title">Best Sellers</h2>
                 <a href="#" class="view-all-btn">View All →</a>
@@ -606,7 +1080,7 @@
 
     <!-- Shop by Device New -->
     <section class="shop-by-device-new" id="shop-device">
-        <div class="container">
+        <div class="container-fluid">
             <div class="section-header-row">
                 <h2 class="section-title">Find Your Perfect Case by Brand</h2>
                 <a href="#" class="view-all-btn">View All →</a>
@@ -642,7 +1116,7 @@
                 </a>
             </div>
         </div>
-        <div class="container">
+        <div class="container-fluid">
             <div class="brands-grid">
                 <div class="brand-item">
                     <a href="#" class="brand-box"><img class="brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/OPPO_LOGO_2019.svg/960px-OPPO_LOGO_2019.svg.png" alt="OPPO"></a>
@@ -735,7 +1209,7 @@
 
     <!-- Category Promo Banners -->
     <section class="promo-banners">
-        <div class="container">
+        <div class="container-fluid">
 
             <!-- Banner 1: Image Left, Text Right -->
             <div class="promo-banner promo-banner--img-left">
@@ -772,7 +1246,7 @@
 
     <!-- Trending Collections -->
     <section class="shop-categories" id="trending">
-        <div class="container">
+        <div class="container-fluid">
             <div class="section-header-row">
                 <h2 class="section-title">Trending Collections</h2>
                 <a href="#" class="view-all-btn">View All →</a>
@@ -848,7 +1322,7 @@
 
     <!-- Shop by Category Section -->
     <section class="shop-category-section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="category-grid">
                 <a href="#phone-cases" class="category-card category-large">
                     <div class="category-image">
@@ -912,7 +1386,7 @@
 
     <!-- Watch & Buy Section -->
     <section class="watch-buy-section" id="watch-buy">
-        <div class="container">
+        <div class="container-fluid">
             <div class="section-header-row">
                 <div class="watch-buy-header-left">
                     <div class="watch-buy-eyebrow">New Arrivals</div>
@@ -1108,7 +1582,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="carousel-progress-row">
                 <div class="carousel-progress">
                     <div class="carousel-progress-bar" id="watch-buy-progress"></div>
@@ -1129,7 +1603,7 @@
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="testimonials-bg-pattern"></div>
-        <div class="container">
+        <div class="container-fluid">
             <div class="section-header">
                 <div class="testimonials-top">
                     <div>
@@ -1269,7 +1743,7 @@
         <div class="newsletter-accent-blur newsletter-accent-blur-left"></div>
         <div class="newsletter-accent-blur newsletter-accent-blur-right"></div>
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="newsletter-split-layout">
                 <div class="newsletter-left">
                     <div class="newsletter-tag">
@@ -1375,7 +1849,7 @@
 
     <!-- Footer -->
     <footer class="footer" id="contact">
-        <div class="container">
+        <div class="container-fluid">
             <div class="footer-content">
                 <div class="footer-col footer-brand">
                     <div class="footer-logo">
@@ -1421,7 +1895,7 @@
                     <ul>
                         <li><a href="#">Mobile Cases</a></li>
                         <li><a href="#">AirPods Cases</a></li>
-                        <li><a href="#">Phone Accessories</a></li>
+                        <li><a href="#">Accessories</a></li>
                         <li><a href="#">Laptop Accessories</a></li>
                     </ul>
                 </div>
@@ -1504,6 +1978,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="script.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
     <script>
         $(document).ready(function () {
             var totalSlides = $('#shop-carousel .category-item').length;
@@ -2005,6 +2480,72 @@
             $('#testimonials-next').on('click', function () {
                 $testimonials.trigger('next.owl.carousel', [800]);
             });
+        });
+    </script>
+
+    <!-- Mega Menu Click Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const megaMenuTrigger = document.getElementById('phoneCasesTrigger');
+            const megaMenu = document.getElementById('megaMenu');
+            const megaMenuOverlay = document.getElementById('megaMenuOverlay');
+
+            // Toggle mega menu on click
+            if (megaMenuTrigger) {
+                megaMenuTrigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    megaMenuTrigger.classList.toggle('active');
+                    megaMenu.classList.toggle('active');
+                    megaMenuOverlay.classList.toggle('active');
+
+                    // Position triangle below the menu item
+                    if (megaMenu.classList.contains('active')) {
+                        const triggerRect = megaMenuTrigger.getBoundingClientRect();
+                        const triggerCenter = triggerRect.left + (triggerRect.width / 2);
+                        megaMenu.style.setProperty('--triangle-position', triggerCenter + 'px');
+                    }
+                });
+            }
+
+            // Close on overlay click
+            if (megaMenuOverlay) {
+                megaMenuOverlay.addEventListener('click', function() {
+                    megaMenuTrigger.classList.remove('active');
+                    megaMenu.classList.remove('active');
+                    megaMenuOverlay.classList.remove('active');
+                });
+            }
+
+            // Close on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && megaMenu.classList.contains('active')) {
+                    megaMenuTrigger.classList.remove('active');
+                    megaMenu.classList.remove('active');
+                    megaMenuOverlay.classList.remove('active');
+                }
+            });
+
+            // Brand switching functionality
+            const brandButtons = document.querySelectorAll('.brand-btn');
+            const brandContents = document.querySelectorAll('.brand-content');
+
+            brandButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const brandId = this.getAttribute('data-brand');
+
+                    // Remove active class from all buttons and contents
+                    brandButtons.forEach(btn => btn.classList.remove('active'));
+                    brandContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    const selectedContent = document.getElementById(`brand-${brandId}`);
+                    if (selectedContent) {
+                        selectedContent.classList.add('active');
+                    }
+                });
+            });
+
         });
     </script>
 </body>

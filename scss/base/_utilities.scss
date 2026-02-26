@@ -13,3 +13,15 @@
         padding-right: 1.25rem;
     }
 }
+
+// ─── Container Fluid Max Width ─────────────────────────────────
+// Limit container-fluid width on larger screens for better readability
+// Full-width up to 1600px, then centered with max-width of 1400px
+
+.container-fluid {
+    @media (min-width: 1600px) {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

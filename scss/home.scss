@@ -1,13 +1,13 @@
 // ═══════════════════════════════════════════════════════════════
-// Authentication SCSS - CaseCraft E-commerce
-// Compiles to: auth.css and auth.min.css
-// Used by: signin.html, signup.html
+// HOME PAGE SCSS - CaseCraft E-commerce
+// Compiles to: home.css and home.min.css
+// Used by: index.html (Homepage)
 // ═══════════════════════════════════════════════════════════════
 
-// 1. Import CSS Custom Properties (:root variables)
+// 1. Import CSS Variables
 @import 'base/css-variables';
 
-// 2. Import SCSS Variables (must be before Bootstrap to override)
+// 2. Import Custom Variables (must be before Bootstrap to override)
 @import 'base/variables';
 
 // 3. Import Bootstrap (from node_modules)
@@ -22,11 +22,11 @@
 @import 'components/cstm-footer';
 @import 'components/mega-menu';
 
-// 6. Import Authentication Page Styles
-@import 'pages/auth';
+// 6. Import Home Page Styles (extracted from styles.css)
+@import 'pages/home';
 
 // ═══════════════════════════════════════════════════════════════
-// Note: This file is specifically for authentication pages
-// Homepage (index.html) uses styles.css
-// Auth pages (signin.html, signup.html) use auth.css
+// Note: This file compiles all styles needed for index.html
+// Previously index.html used styles.css directly
+// Now using SCSS with Bootstrap integration for consistency
 // ═══════════════════════════════════════════════════════════════

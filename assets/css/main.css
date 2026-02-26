@@ -11918,3 +11918,10 @@ textarea.form-control-lg {
     padding-right: 1.25rem;
   }
 }
+@media (min-width: 1600px) {
+  .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

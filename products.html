@@ -12,13 +12,18 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md cc-navbar sticky-top">
+    <nav class="navbar navbar-expand-lg cc-navbar sticky-top">
         <div class="container-fluid">
+            <!-- Hamburger toggler (mobile + tablet, left of logo) -->
+            <button class="cc-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+
             <!-- Logo -->
             <a class="navbar-brand cc-logo" href="index.html">CaseCraft</a>
 
-            <!-- Mobile: action icons + toggler -->
-            <div class="d-flex align-items-center gap-2 d-md-none ms-auto">
+            <!-- Mobile + Tablet: action icons on right -->
+            <div class="d-flex align-items-center gap-2 d-lg-none ms-auto">
                 <button class="icon-btn search-btn" aria-label="Search">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                 </button>
@@ -26,24 +31,21 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
                     <span class="cart-count">0</span>
                 </button>
-                <button class="cc-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
-                    <span></span><span></span><span></span>
-                </button>
             </div>
 
-            <!-- Desktop nav links -->
-            <div class="collapse navbar-collapse justify-content-center d-none d-md-flex">
+            <!-- Desktop nav links (lg and up) -->
+            <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex">
                 <ul class="navbar-nav gap-4">
                     <li class="nav-item"><a class="cc-nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="cc-nav-link active" href="products.html">Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link active" href="products.html">Phone Cases</a></li>
                     <li class="nav-item"><a class="cc-nav-link" href="products.html?category=airpods">Airpod Cases</a></li>
                     <li class="nav-item"><a class="cc-nav-link" href="products.html?category=watch">Watch Straps</a></li>
-                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=accessories">Phone Accessories</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=accessories">Accessories</a></li>
                 </ul>
             </div>
 
-            <!-- Desktop action icons -->
-            <div class="nav-actions d-none d-md-flex align-items-center gap-2">
+            <!-- Desktop action icons (lg and up) -->
+            <div class="nav-actions d-none d-lg-flex align-items-center gap-2">
                 <button class="icon-btn search-btn" aria-label="Search">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                 </button>
@@ -58,7 +60,7 @@
         </div>
     </nav>
 
-    <!-- Mobile Offcanvas -->
+    <!-- Mobile Offcanvas Drawer (slides left → right) -->
     <div class="offcanvas offcanvas-start cc-offcanvas" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
         <div class="offcanvas-header">
             <span class="cc-logo" id="mobileNavLabel">CaseCraft</span>
@@ -67,19 +69,206 @@
             </button>
         </div>
         <div class="offcanvas-body">
-            <ul class="cc-mobile-nav-links">
-                <li><a href="index.html" data-bs-dismiss="offcanvas">Home</a></li>
-                <li><a href="products.html" data-bs-dismiss="offcanvas">Cases</a></li>
-                <li><a href="products.html?category=airpods" data-bs-dismiss="offcanvas">Airpod Cases</a></li>
-                <li><a href="products.html?category=watch" data-bs-dismiss="offcanvas">Watch Straps</a></li>
-                <li><a href="products.html?category=accessories" data-bs-dismiss="offcanvas">Phone Accessories</a></li>
-            </ul>
+            <!-- Main Menu -->
+            <div class="mobile-slide-menu active" id="mobileMainMenu">
+                <ul class="cc-mobile-nav-links">
+                    <li><a href="index.html" data-bs-dismiss="offcanvas">Home</a></li>
+                    <li>
+                        <a href="#" class="mobile-slide-trigger" data-target="brandMenu">
+                            Phone Cases
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </li>
+                    <li><a href="index.html#new" data-bs-dismiss="offcanvas">Airpod Cases</a></li>
+                    <li><a href="index.html#sale" data-bs-dismiss="offcanvas">Watch Straps</a></li>
+                    <li><a href="index.html#about" data-bs-dismiss="offcanvas">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Brand Menu -->
+            <div class="mobile-slide-menu" id="mobileBrandMenu">
+                <div class="mobile-menu-header">
+                    <button class="mobile-back-btn" data-back="mainMenu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Back
+                    </button>
+                    <h3>Select Brand</h3>
+                </div>
+                <ul class="cc-mobile-nav-links">
+                    <li><a href="#" class="mobile-slide-trigger" data-target="appleMenu" data-brand="apple">Apple</a></li>
+                    <li><a href="#" class="mobile-slide-trigger" data-target="samsungMenu" data-brand="samsung">Samsung</a></li>
+                    <li><a href="#" class="mobile-slide-trigger" data-target="googleMenu" data-brand="google">Google</a></li>
+                    <li><a href="#" class="mobile-slide-trigger" data-target="oneplusMenu" data-brand="oneplus">OnePlus</a></li>
+                    <li><a href="products.html?brand=xiaomi" data-bs-dismiss="offcanvas">Xiaomi</a></li>
+                    <li><a href="products.html?brand=oppo" data-bs-dismiss="offcanvas">OPPO</a></li>
+                    <li><a href="products.html?brand=vivo" data-bs-dismiss="offcanvas">Vivo</a></li>
+                    <li><a href="products.html?brand=realme" data-bs-dismiss="offcanvas">Realme</a></li>
+                    <li><a href="products.html?brand=motorola" data-bs-dismiss="offcanvas">Motorola</a></li>
+                    <li><a href="products.html?brand=nokia" data-bs-dismiss="offcanvas">Nokia</a></li>
+                    <li><a href="products.html?brand=huawei" data-bs-dismiss="offcanvas">Huawei</a></li>
+                    <li><a href="products.html?brand=sony" data-bs-dismiss="offcanvas">Sony</a></li>
+                    <li><a href="products.html?brand=asus" data-bs-dismiss="offcanvas">ASUS</a></li>
+                    <li><a href="products.html?brand=nothing" data-bs-dismiss="offcanvas">Nothing</a></li>
+                    <li><a href="products.html?brand=lg" data-bs-dismiss="offcanvas">LG</a></li>
+                </ul>
+            </div>
+
+            <!-- Apple Models Menu -->
+            <div class="mobile-slide-menu" id="mobileAppleMenu">
+                <div class="mobile-menu-header">
+                    <button class="mobile-back-btn" data-back="brandMenu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Back
+                    </button>
+                    <h3>Apple iPhone</h3>
+                </div>
+                <ul class="cc-mobile-nav-links">
+                    <li class="mobile-series-header">iPhone 16 Series</li>
+                    <li><a href="products.html?model=iphone16-pro-max" data-bs-dismiss="offcanvas">iPhone 16 Pro Max</a></li>
+                    <li><a href="products.html?model=iphone16-pro" data-bs-dismiss="offcanvas">iPhone 16 Pro</a></li>
+                    <li><a href="products.html?model=iphone16-plus" data-bs-dismiss="offcanvas">iPhone 16 Plus</a></li>
+                    <li><a href="products.html?model=iphone16" data-bs-dismiss="offcanvas">iPhone 16</a></li>
+
+                    <li class="mobile-series-header">iPhone 15 Series</li>
+                    <li><a href="products.html?model=iphone15-pro-max" data-bs-dismiss="offcanvas">iPhone 15 Pro Max</a></li>
+                    <li><a href="products.html?model=iphone15-pro" data-bs-dismiss="offcanvas">iPhone 15 Pro</a></li>
+                    <li><a href="products.html?model=iphone15-plus" data-bs-dismiss="offcanvas">iPhone 15 Plus</a></li>
+                    <li><a href="products.html?model=iphone15" data-bs-dismiss="offcanvas">iPhone 15</a></li>
+
+                    <li class="mobile-series-header">iPhone 14 Series</li>
+                    <li><a href="products.html?model=iphone14-pro-max" data-bs-dismiss="offcanvas">iPhone 14 Pro Max</a></li>
+                    <li><a href="products.html?model=iphone14-pro" data-bs-dismiss="offcanvas">iPhone 14 Pro</a></li>
+                    <li><a href="products.html?model=iphone14-plus" data-bs-dismiss="offcanvas">iPhone 14 Plus</a></li>
+                    <li><a href="products.html?model=iphone14" data-bs-dismiss="offcanvas">iPhone 14</a></li>
+                </ul>
+            </div>
+
+            <!-- Samsung Models Menu -->
+            <div class="mobile-slide-menu" id="mobileSamsungMenu">
+                <div class="mobile-menu-header">
+                    <button class="mobile-back-btn" data-back="brandMenu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Back
+                    </button>
+                    <h3>Samsung Galaxy</h3>
+                </div>
+                <ul class="cc-mobile-nav-links">
+                    <li class="mobile-series-header">Galaxy S24 Series</li>
+                    <li><a href="products.html?model=s24-ultra" data-bs-dismiss="offcanvas">Galaxy S24 Ultra</a></li>
+                    <li><a href="products.html?model=s24-plus" data-bs-dismiss="offcanvas">Galaxy S24+</a></li>
+                    <li><a href="products.html?model=s24" data-bs-dismiss="offcanvas">Galaxy S24</a></li>
+
+                    <li class="mobile-series-header">Galaxy S23 Series</li>
+                    <li><a href="products.html?model=s23-ultra" data-bs-dismiss="offcanvas">Galaxy S23 Ultra</a></li>
+                    <li><a href="products.html?model=s23-plus" data-bs-dismiss="offcanvas">Galaxy S23+</a></li>
+                    <li><a href="products.html?model=s23" data-bs-dismiss="offcanvas">Galaxy S23</a></li>
+
+                    <li class="mobile-series-header">Galaxy Z Fold</li>
+                    <li><a href="products.html?model=z-fold6" data-bs-dismiss="offcanvas">Galaxy Z Fold 6</a></li>
+                    <li><a href="products.html?model=z-fold5" data-bs-dismiss="offcanvas">Galaxy Z Fold 5</a></li>
+                </ul>
+            </div>
+
+            <!-- Google Models Menu -->
+            <div class="mobile-slide-menu" id="mobileGoogleMenu">
+                <div class="mobile-menu-header">
+                    <button class="mobile-back-btn" data-back="brandMenu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Back
+                    </button>
+                    <h3>Google Pixel</h3>
+                </div>
+                <ul class="cc-mobile-nav-links">
+                    <li class="mobile-series-header">Pixel 9 Series</li>
+                    <li><a href="products.html?model=pixel9-pro-xl" data-bs-dismiss="offcanvas">Pixel 9 Pro XL</a></li>
+                    <li><a href="products.html?model=pixel9-pro" data-bs-dismiss="offcanvas">Pixel 9 Pro</a></li>
+                    <li><a href="products.html?model=pixel9" data-bs-dismiss="offcanvas">Pixel 9</a></li>
+
+                    <li class="mobile-series-header">Pixel 8 Series</li>
+                    <li><a href="products.html?model=pixel8-pro" data-bs-dismiss="offcanvas">Pixel 8 Pro</a></li>
+                    <li><a href="products.html?model=pixel8" data-bs-dismiss="offcanvas">Pixel 8</a></li>
+                </ul>
+            </div>
+
+            <!-- OnePlus Models Menu -->
+            <div class="mobile-slide-menu" id="mobileOneplusMenu">
+                <div class="mobile-menu-header">
+                    <button class="mobile-back-btn" data-back="brandMenu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Back
+                    </button>
+                    <h3>OnePlus</h3>
+                </div>
+                <ul class="cc-mobile-nav-links">
+                    <li class="mobile-series-header">OnePlus 12 Series</li>
+                    <li><a href="products.html?model=oneplus12-pro" data-bs-dismiss="offcanvas">OnePlus 12 Pro</a></li>
+                    <li><a href="products.html?model=oneplus12" data-bs-dismiss="offcanvas">OnePlus 12</a></li>
+
+                    <li class="mobile-series-header">OnePlus 11 Series</li>
+                    <li><a href="products.html?model=oneplus11" data-bs-dismiss="offcanvas">OnePlus 11</a></li>
+                    <li><a href="products.html?model=oneplus11r" data-bs-dismiss="offcanvas">OnePlus 11R</a></li>
+                </ul>
+            </div>
+
             <div class="cc-mobile-actions">
-                <a href="signin.html" class="icon-btn" aria-label="Account">
+                <!-- Mobile Logged Out State -->
+                <a href="signin.html" class="icon-btn" aria-label="Account" id="mobileAccountBtnLoggedOut">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     <span>My Account</span>
                 </a>
+
+                <!-- Mobile Logged In State (hidden by default) -->
+                <div class="mobile-user-menu" id="mobileUserMenu" style="display: none;">
+                    <div class="mobile-user-header">
+                        <div class="user-avatar">
+                            <span class="user-avatar-text" id="mobileUserInitials">U</span>
+                        </div>
+                        <div class="mobile-user-info">
+                            <div class="mobile-user-name" id="mobileUserName">User</div>
+                            <div class="mobile-user-email" id="mobileUserEmail">user@example.com</div>
+                        </div>
+                    </div>
+                    <div class="mobile-user-links">
+                        <a href="#" class="mobile-user-link" data-bs-dismiss="offcanvas">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <span>My Account</span>
+                        </a>
+                        <a href="#" class="mobile-user-link" data-bs-dismiss="offcanvas">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/>
+                            </svg>
+                            <span>Orders</span>
+                        </a>
+                        <a href="change-password.html" class="mobile-user-link" data-bs-dismiss="offcanvas">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <span>Change Password</span>
+                        </a>
+                        <button class="mobile-user-link mobile-logout-btn" id="mobileLogoutBtn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+                            </svg>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
             </div>
+        </div>
         </div>
     </div>
 
@@ -531,6 +720,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
     <script>
         $(document).ready(function() {
             // Filter Toggle (All Devices)

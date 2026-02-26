@@ -1,0 +1,403 @@
+// ═══════════════════════════════════════════════════════════════
+// Mega Menu Component - Dropdown Style Below Navbar
+// ═══════════════════════════════════════════════════════════════
+
+// Dropdown icon styling
+#phoneCasesTrigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+
+    .dropdown-icon {
+        transition: transform 0.3s ease;
+        margin-top: 2px;
+    }
+
+    &.active .dropdown-icon {
+        transform: rotate(180deg);
+    }
+}
+
+// Overlay
+.mega-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 998;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+// Mega Menu Container
+.mega-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg,
+        rgba(10, 18, 70, 0.98) 0%,
+        rgba(8, 15, 60, 0.98) 50%,
+        rgba(6, 12, 50, 0.98) 100%
+    );
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(137, 92, 242, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
+                0 0 100px rgba(137, 92, 242, 0.08) inset;
+    z-index: 999;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    // Dropdown triangle pointer (outer border)
+    &::before {
+        content: '';
+        position: absolute;
+        top: -12px;
+        left: var(--triangle-position, 50%);
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid rgba(137, 92, 242, 0.6);
+        z-index: 1;
+    }
+
+    // Inner triangle
+    &::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: var(--triangle-position, 50%);
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid rgba(10, 18, 70, 0.98);
+        z-index: 2;
+    }
+}
+
+.mega-menu-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    height: 600px;
+}
+
+// Left Sidebar
+.mega-menu-sidebar {
+    background: rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(137, 92, 242, 0.2);
+    padding: 1.5rem 0;
+    overflow-y: auto;
+}
+
+.mega-menu-sidebar-header {
+    padding: 0 1.5rem 1rem;
+    border-bottom: 1px solid rgba(137, 92, 242, 0.2);
+    margin-bottom: 1rem;
+
+    h3 {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: $text-primary;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin: 0 0 0.25rem 0;
+    }
+
+    p {
+        font-size: 0.75rem;
+        color: $text-secondary;
+        margin: 0;
+    }
+}
+
+.brand-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin-bottom: 0.25rem;
+    }
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(137, 92, 242, 0.4);
+        border-radius: 2px;
+    }
+}
+
+.brand-btn {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: $text-secondary;
+    text-align: left;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(137, 92, 242, 0.1);
+        color: $text-primary;
+    }
+
+    &.active {
+        background: rgba(137, 92, 242, 0.2);
+        color: $text-primary;
+        font-weight: 600;
+        border-left: 3px solid $primary;
+    }
+}
+
+// Right Content Area
+.mega-menu-main {
+    padding: 2rem;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(137, 92, 242, 0.4);
+        border-radius: 3px;
+    }
+}
+
+.brand-content {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: $accent-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 1.5rem 0;
+}
+
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.series-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(137, 92, 242, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(137, 92, 242, 0.4);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(137, 92, 242, 0.2);
+    }
+
+    h5 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $text-primary;
+        margin: 0 0 0.75rem 0;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(137, 92, 242, 0.2);
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 0.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    a {
+        display: block;
+        color: $text-secondary;
+        text-decoration: none;
+        font-size: 0.9rem;
+        padding: 0.35rem 0;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: $primary;
+            padding-left: 0.5rem;
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 1200px) {
+    .mega-menu-inner {
+        grid-template-columns: 220px 1fr;
+    }
+
+    .series-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 991px) {
+    // Hide desktop mega menu on mobile and tablet
+    .mega-menu {
+        display: none !important;
+    }
+}
+
+// Mobile Offcanvas Body Container
+.cc-offcanvas .offcanvas-body {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+// Mobile Slide Menu System
+.mobile-slide-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: $bg-primary;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 10;
+    -webkit-overflow-scrolling: touch;
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    &.slide-back {
+        transform: translateX(-30%);
+    }
+
+    // First menu should be visible by default
+    &#mobileMainMenu {
+        transform: translateX(0);
+    }
+
+}
+
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1.25rem 1rem;
+    border-bottom: 1px solid rgba(137, 92, 242, 0.2);
+    margin-bottom: 0.5rem;
+
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $text-primary;
+        margin: 0;
+    }
+}
+
+.mobile-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(137, 92, 242, 0.1);
+    border: 1px solid rgba(137, 92, 242, 0.3);
+    border-radius: 8px;
+    color: $text-primary;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    &:hover {
+        background: rgba(137, 92, 242, 0.2);
+        border-color: rgba(137, 92, 242, 0.4);
+    }
+}
+
+.mobile-slide-trigger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    svg {
+        margin-left: auto;
+        flex-shrink: 0;
+        opacity: 0.6;
+    }
+}
+
+.mobile-series-header {
+    padding: 0.65rem 1.25rem 0.45rem 1.5rem !important;
+    color: rgba(137, 92, 242, 0.8) !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    border-bottom: none !important;
+    background: rgba(137, 92, 242, 0.05) !important;
+    margin-top: 0.5rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    a {
+        pointer-events: none !important;
+    }
+
+    & + li {
+        border-top: none !important;
+    }
+}
+
+// Mobile Actions - Keep below slide menus
+.cc-mobile-actions {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+    padding: 1rem;
+    border-top: 1px solid rgba(137, 92, 242, 0.2);
+    flex-shrink: 0;
+}
