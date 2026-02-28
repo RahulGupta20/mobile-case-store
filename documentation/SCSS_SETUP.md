@@ -39,23 +39,99 @@ This installs:
 
 ## Usage
 
-### Development Mode (Watch for changes)
-```bash
-npm run sass
-```
-This watches `scss/main.scss` and auto-compiles to `styles.css` on every save.
+### NPM Run Commands
 
-### Development with Source Maps
+#### Individual Page Commands (Watch Mode)
+
+**Home Page:**
+```bash
+npm run sass:home
+```
+Watches `scss/home.scss` and auto-compiles to `assets/css/home.css` on save.
+
+**Main Styles:**
+```bash
+npm run sass:main
+```
+Watches `scss/main.scss` and auto-compiles to `assets/css/main.css` on save.
+
+**Authentication Pages:**
+```bash
+npm run sass:auth
+```
+Watches `scss/auth.scss` and auto-compiles to `assets/css/auth.css` on save.
+
+**Products Page:**
+```bash
+npm run sass:products
+```
+Watches `scss/products.scss` and auto-compiles to `assets/css/products.css` on save.
+
+**Product Detail Page:**
+```bash
+npm run sass:product-detail
+```
+Watches `scss/product-detail.scss` and auto-compiles to `assets/css/product-detail.css` on save.
+
+#### All Pages Commands
+
+**Watch All Files:**
+```bash
+npm run sass:watch
+```
+Watches all SCSS files (home, auth, products, product-detail) and auto-compiles on save.
+
+**Development Mode (with source maps):**
 ```bash
 npm run sass:dev
 ```
-Same as above but includes source maps for easier debugging.
+Watches all SCSS files and includes source maps for easier debugging.
 
-### Production Build (Compressed)
+**Production Build (compressed + minified):**
 ```bash
 npm run sass:build
 ```
-Compiles and minifies CSS for production deployment.
+Compiles all SCSS files to both regular CSS and minified .min.css versions for production deployment.
+
+**Production Watch Mode:**
+```bash
+npm run sass:prod
+```
+Watches all SCSS files and compiles minified versions for production.
+
+### Command Summary
+
+| Command | Purpose | Output |
+|---------|---------|--------|
+| `npm run sass:home` | Watch home page | `assets/css/home.css` |
+| `npm run sass:main` | Watch main styles | `assets/css/main.css` |
+| `npm run sass:auth` | Watch auth pages | `assets/css/auth.css` |
+| `npm run sass:products` | Watch products page | `assets/css/products.css` |
+| `npm run sass:product-detail` | Watch product detail | `assets/css/product-detail.css` |
+| `npm run sass:watch` | Watch all files | All CSS files |
+| `npm run sass:dev` | Development mode | All CSS + source maps |
+| `npm run sass:build` | Production build | All CSS + minified |
+| `npm run sass:prod` | Production watch | All minified CSS |
+
+### Recommended Workflows
+
+**During Development (single page):**
+```bash
+npm run sass:product-detail
+```
+Use this when working on a specific page for faster compilation.
+
+**During Development (multiple pages):**
+```bash
+npm run sass:watch
+```
+Use this when working across multiple pages.
+
+**Before Deployment:**
+```bash
+npm run sass:build
+```
+This compiles and minifies all CSS files for production.
 
 ## How It Works
 
