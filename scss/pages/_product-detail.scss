@@ -6,8 +6,8 @@
 .product-detail-page {
     min-height: 100vh;
     background: $bg-primary;
-    padding-top: 3rem;
-    padding-bottom: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
     position: relative;
 
     @media (max-width: 768px) {
@@ -23,12 +23,12 @@
     gap: 0.5rem;
     font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.4);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     position: relative;
     z-index: 1;
 
     @media (max-width: 768px) {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         font-size: 0.8125rem;
     }
 
@@ -1471,5 +1471,61 @@
             grid-template-columns: 1fr;
             gap: 1rem;
         }
+    }
+}
+
+// ─── Cart Notification Toast ─────────────────────────────────
+.cart-notification {
+    position: fixed;
+    top: 100px;
+    right: -400px;
+    background: linear-gradient(135deg, rgba(137, 92, 242, 0.95) 0%, rgba(99, 102, 241, 0.95) 100%);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 300px;
+
+    @media (max-width: 576px) {
+        right: -350px;
+        min-width: 280px;
+        padding: 0.875rem 1.25rem;
+        top: 80px;
+    }
+
+    &.show {
+        right: 20px;
+
+        @media (max-width: 576px) {
+            right: 10px;
+        }
+    }
+
+    &.error {
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.95) 0%, rgba(220, 38, 38, 0.95) 100%);
+    }
+
+    &.info {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.95) 0%, rgba(37, 99, 235, 0.95) 100%);
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        stroke-width: 2.5;
+    }
+
+    span {
+        font-size: 0.9375rem;
+        font-weight: 500;
+        line-height: 1.4;
     }
 }

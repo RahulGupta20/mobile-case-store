@@ -1,0 +1,24 @@
+// ═══════════════════════════════════════════════════════════
+// CART PAGE - Main SCSS File
+// ═══════════════════════════════════════════════════════════
+
+// 1. Import CSS Variables
+@import 'base/css-variables';
+
+// 2. Import Custom Variables
+@import 'base/variables';
+
+// 3. Import Bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// 4. Import Base Utilities
+@import 'base/utilities';
+
+// 5. Import Navbar Component
+@import 'components/cstm-navbar';
+
+// 6. Import Footer Component
+@import 'components/cstm-footer';
+
+// 7. Import Cart Page Styles
+@import 'pages/cart';

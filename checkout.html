@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Checkout - CaseCraft</title>
+
+        <link rel="stylesheet" href="assets/css/checkout.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg cc-navbar sticky-top">
+            <div class="container-fluid">
+                <!-- Hamburger toggler (mobile + tablet, left of logo) -->
+                <button class="cc-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <!-- Logo -->
+                <a class="navbar-brand cc-logo" href="index.html">CaseCraft</a>
+
+                <!-- Mobile + Tablet: action icons on right -->
+                <div class="d-flex align-items-center gap-2 d-lg-none ms-auto">
+                    <div class="secure-badge-mobile">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Desktop: Secure Checkout Badge -->
+                <div class="secure-badge d-none d-lg-flex">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    <span>Secure Checkout</span>
+                </div>
+
+                <!-- Desktop action icons (lg and up) -->
+                <div class="nav-actions d-none d-lg-flex align-items-center gap-2">
+                    <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Checkout Page -->
+        <div class="checkout-page">
+            <div class="container-fluid">
+                <div class="checkout-content">
+                    <!-- Checkout Form Section -->
+                    <div class="checkout-form-section">
+                        <!-- Checkout Type Selection -->
+                        <div class="checkout-section">
+                            <h2 class="section-title">Checkout</h2>
+
+                            <!-- User Type Toggle -->
+                            <div class="user-type-toggle">
+                                <div class="toggle-option active" id="guestCheckout" data-type="guest">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="12" cy="7" r="4"/>
+                                    </svg>
+                                    <span>Guest Checkout</span>
+                                </div>
+                                <div class="toggle-option" id="loginCheckout" data-type="login">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                                        <polyline points="10 17 15 12 10 7"/>
+                                        <line x1="15" y1="12" x2="3" y2="12"/>
+                                    </svg>
+                                    <span>Login</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Guest Contact Form -->
+                        <div class="checkout-section" id="guestContactForm">
+                            <h2 class="section-title">Contact Information</h2>
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <input type="email" id="email" name="email" placeholder="Email *" required
+                                        autocomplete="email">
+                                </div>
+                            </div>
+                            <div class="checkout-option">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="subscribe" id="subscribe">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Email me with news and offers</span>
+                                </label>
+                            </div>
+                            <p class="guest-note">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="12" y1="16" x2="12" y2="12"/>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                                </svg>
+                                We'll send order confirmation and updates to this email
+                            </p>
+                        </div>
+
+                        <!-- Login Form (Hidden by default) -->
+                        <div class="checkout-section" id="loginForm" style="display: none;">
+                            <h2 class="section-title">Login to Your Account</h2>
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <input type="email" id="loginEmail" name="loginEmail" placeholder="Email *" required
+                                        autocomplete="email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Password *" required
+                                        autocomplete="current-password">
+                                </div>
+                            </div>
+                            <div class="login-actions">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="rememberMe" id="rememberMe">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Remember me</span>
+                                </label>
+                                <a href="#" class="link-forgot">Forgot password?</a>
+                            </div>
+                            <button type="button" class="btn-login">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                                    <polyline points="10 17 15 12 10 7"/>
+                                    <line x1="15" y1="12" x2="3" y2="12"/>
+                                </svg>
+                                Login & Continue
+                            </button>
+                            <p class="register-note">Don't have an account? <a href="#" class="link-register">Create one</a> - it's quick and saves time for future orders!</p>
+                        </div>
+
+                        <!-- Delivery -->
+                        <div class="checkout-section">
+                            <h2 class="section-title">Delivery</h2>
+
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <select id="country" name="country" required autocomplete="country">
+                                        <option value="NP" selected>Nepal</option>
+                                        <option value="IN">India</option>
+                                        <option value="US">United States</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="firstName" name="firstName" placeholder="First name" required
+                                        autocomplete="given-name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="lastName" name="lastName" placeholder="Last name" required
+                                        autocomplete="family-name">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <input type="text" id="address" name="address" placeholder="Address" required
+                                        autocomplete="street-address">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <input type="text" id="apartment" name="apartment"
+                                        placeholder="Apartment, suite, etc. (optional)" autocomplete="address-line2">
+                                </div>
+                            </div>
+
+                            <div class="form-row three-col">
+                                <div class="form-group">
+                                    <input type="text" id="city" name="city" placeholder="City/District" required
+                                        autocomplete="address-level2">
+                                </div>
+                                <div class="form-group">
+                                    <select id="state" name="state" required autocomplete="address-level1">
+                                        <option value="">Province</option>
+                                        <option value="P1">Koshi Pradesh</option>
+                                        <option value="P2">Madhesh Pradesh</option>
+                                        <option value="P3">Bagmati Pradesh</option>
+                                        <option value="P4">Gandaki Pradesh</option>
+                                        <option value="P5">Lumbini Pradesh</option>
+                                        <option value="P6">Karnali Pradesh</option>
+                                        <option value="P7">Sudurpashchim Pradesh</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="zipCode" name="zipCode" placeholder="Postal code (optional)"
+                                        autocomplete="postal-code">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <input type="tel" id="phone" name="phone" placeholder="Phone *" required autocomplete="tel">
+                                </div>
+                            </div>
+                            <p class="field-note">Phone number is required for delivery coordination</p>
+
+                            <div class="checkout-option">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="saveInfo" id="saveInfo">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Save this information for next time</span>
+                                </label>
+                            </div>
+
+                            <!-- Create Account Option (Guest Checkout Only) -->
+                            <div class="create-account-option" id="createAccountOption">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="createAccount" id="createAccount">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Create an account for faster checkout next time</span>
+                                </label>
+
+                                <!-- Password Field (shown when checkbox is checked) -->
+                                <div class="create-account-fields" id="createAccountFields" style="display: none;">
+                                    <div class="form-row" style="margin-top: 1rem;">
+                                        <div class="form-group full-width">
+                                            <input type="password" id="newPassword" name="newPassword"
+                                                placeholder="Create Password *" minlength="6" autocomplete="new-password">
+                                            <span class="form-hint">Minimum 6 characters</span>
+                                        </div>
+                                    </div>
+                                    <div class="account-benefits">
+                                        <p class="benefits-title">Account Benefits:</p>
+                                        <ul class="benefits-list">
+                                            <li>
+                                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="20 6 9 17 4 12"/>
+                                                </svg>
+                                                Track your orders in real-time
+                                            </li>
+                                            <li>
+                                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="20 6 9 17 4 12"/>
+                                                </svg>
+                                                Save addresses for faster checkout
+                                            </li>
+                                            <li>
+                                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="20 6 9 17 4 12"/>
+                                                </svg>
+                                                Get exclusive offers and updates
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Method -->
+                        <div class="checkout-section">
+                            <h2 class="section-title">Shipping method</h2>
+                            <div class="shipping-option selected">
+                                <div class="shipping-info">
+                                    <span class="shipping-name">Standard Shipping</span>
+                                    <span class="shipping-time">5-7 business days</span>
+                                </div>
+                                <span class="shipping-price">Free</span>
+                            </div>
+                        </div>
+
+                        <!-- Payment -->
+                        <div class="checkout-section">
+                            <h2 class="section-title">Payment Method</h2>
+                            <p class="section-subtitle">All transactions are secure and encrypted.</p>
+
+                            <!-- Payment Dropdown -->
+                            <div class="payment-dropdown-wrapper">
+                                <div class="payment-dropdown" id="paymentDropdown">
+                                    <div class="payment-selected" id="paymentSelected">
+                                        <div class="payment-method-display">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                                                <line x1="2" y1="10" x2="22" y2="10"/>
+                                            </svg>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-name">Cash on Delivery (COD)</span>
+                                                <span class="payment-method-desc">Pay when you receive your order</span>
+                                            </div>
+                                        </div>
+                                        <svg class="dropdown-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9"/>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Dropdown Menu -->
+                                    <div class="payment-dropdown-menu" id="paymentDropdownMenu">
+                                        <div class="payment-option" data-value="cod" data-icon="wallet">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                                                <line x1="2" y1="10" x2="22" y2="10"/>
+                                            </svg>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-name">Cash on Delivery (COD)</span>
+                                                <span class="payment-method-desc">Pay when you receive your order</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="payment-option" data-value="esewa" data-icon="esewa">
+                                            <div class="wallet-icon" style="background: #60bb46; color: white;">e</div>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-name">eSewa</span>
+                                                <span class="payment-method-desc">Pay using eSewa digital wallet</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="payment-option" data-value="khalti" data-icon="khalti">
+                                            <div class="wallet-icon" style="background: #5c2d91; color: white;">K</div>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-name">Khalti</span>
+                                                <span class="payment-method-desc">Pay using Khalti digital wallet</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="payment-option" data-value="imepay" data-icon="imepay">
+                                            <div class="wallet-icon" style="background: #d71921; color: white;">I</div>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-name">IME Pay</span>
+                                                <span class="payment-method-desc">Pay using IME Pay digital wallet</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="payment-option" data-value="banking" data-icon="bank">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                                <polyline points="9 22 9 12 15 12 15 22"/>
+                                            </svg>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-name">Online Banking</span>
+                                                <span class="payment-method-desc">Pay via internet banking</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="payment-option" data-value="card" data-icon="card">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                                                <line x1="2" y1="10" x2="22" y2="10"/>
+                                                <line x1="6" y1="15" x2="10" y2="15"/>
+                                            </svg>
+                                            <div class="payment-method-info">
+                                                <span class="payment-method-name">Credit/Debit Card</span>
+                                                <span class="payment-method-desc">Visa, Mastercard, or local cards</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card Details (shown when card is selected) -->
+                            <div class="payment-box card-details" id="cardDetails" style="display: none; margin-top: 16px;">
+                                <div class="payment-body">
+                                    <div class="form-row">
+                                        <div class="form-group full-width">
+                                            <label for="cardNumber">Card Number *</label>
+                                            <input type="text" id="cardNumber" name="cardNumber"
+                                                placeholder="1234 5678 9012 3456" maxlength="19">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="cardName">Cardholder Name *</label>
+                                            <input type="text" id="cardName" name="cardName" placeholder="John Doe">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiryDate">Expiry Date *</label>
+                                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM / YY"
+                                                maxlength="7">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv">CVV *</label>
+                                            <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Place Order Button -->
+                            <a href="order-confirmation.html" class="btn-place-order">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                                Place Order - NPR 24,299
+                            </a>
+
+                            <p class="secure-note">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                                Your payment information is secure and encrypted
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary Sidebar -->
+                    <div class="order-summary-section">
+                        <div class="order-summary">
+                            <h2>Order Summary</h2>
+
+                            <!-- Order Items -->
+                            <div class="order-items">
+                                <div class="order-item">
+                                    <div class="item-image-wrapper">
+                                        <div class="item-image">
+                                            <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=80&h=80&fit=crop"
+                                                alt="Product">
+                                        </div>
+                                        <span class="item-qty">2</span>
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>Premium Leather MagSafe Case</h4>
+                                        <p>iPhone 15 Pro Max • Midnight Black</p>
+                                    </div>
+                                    <div class="item-price">NPR 12,998</div>
+                                </div>
+
+                                <div class="order-item">
+                                    <div class="item-image-wrapper">
+                                        <div class="item-image">
+                                            <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=80&h=80&fit=crop"
+                                                alt="Product">
+                                        </div>
+                                        <span class="item-qty">1</span>
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>Silicone Protective Case</h4>
+                                        <p>iPhone 14 Pro • Ocean Blue</p>
+                                    </div>
+                                    <div class="item-price">NPR 3,899</div>
+                                </div>
+
+                                <div class="order-item">
+                                    <div class="item-image-wrapper">
+                                        <div class="item-image">
+                                            <img src="https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=80&h=80&fit=crop"
+                                                alt="Product">
+                                        </div>
+                                        <span class="item-qty">1</span>
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>Crystal Clear MagSafe Case</h4>
+                                        <p>iPhone 15 • Clear</p>
+                                    </div>
+                                    <div class="item-price">NPR 5,202</div>
+                                </div>
+                            </div>
+
+                            <!-- Order Totals -->
+                            <div class="order-totals">
+                                <div class="total-row">
+                                    <span>Subtotal</span>
+                                    <span>NPR 22,099</span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Delivery Charge</span>
+                                    <span>NPR 100</span>
+                                </div>
+                                <div class="total-row">
+                                    <span>VAT (13%)</span>
+                                    <span>NPR 2,100</span>
+                                </div>
+                                <div class="total-divider"></div>
+                                <div class="total-row total-final">
+                                    <span>Total</span>
+                                    <span>NPR 24,299</span>
+                                </div>
+                            </div>
+
+                            <!-- Promo Code -->
+                            <div class="promo-code">
+                                <input type="text" placeholder="Promo code">
+                                <button>Apply</button>
+                            </div>
+                        </div>
+
+                        <!-- Trust Indicators -->
+                        <div class="trust-indicators">
+                            <div class="trust-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                </svg>
+                                <span>Cash on Delivery available</span>
+                            </div>
+                            <div class="trust-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                    <polyline points="9 22 9 12 15 12 15 22" />
+                                </svg>
+                                <span>7-day return policy</span>
+                            </div>
+                            <div class="trust-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <span>Delivery tracking via phone</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Features Section -->
+        <div class="product-features-section">
+            <div class="container-fluid">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Drop Protection</h3>
+                            <p>Military-grade certified protection</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Free Delivery</h3>
+                            <p>On orders above NPR 5,000</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Easy Returns</h3>
+                            <p>7-day hassle-free returns</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Fast Delivery</h3>
+                            <p>3-5 working days delivery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer" id="contact">
+            <div class="container-fluid">
+                <div class="footer-content">
+                    <div class="footer-col footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo-icon">
+                                <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                                    <rect width="40" height="40" rx="8" fill="url(#footerGradient)"/>
+                                    <path d="M12 28V12L20 20L28 12V28L20 20L12 28Z" fill="white" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <defs>
+                                        <linearGradient id="footerGradient" x1="0" y1="0" x2="40" y2="40">
+                                            <stop offset="0%" stop-color="#667eea"/>
+                                            <stop offset="100%" stop-color="#764ba2"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <span class="footer-logo-text">Case<span class="gradient-text">Craft</span></span>
+                        </div>
+                        <p class="footer-desc">Premium tech accessories designed for the modern lifestyle. Quality you can trust, style you can feel.</p>
+                        <div class="footer-contact">
+                            <p><strong>Contact:</strong> support@casecraft.com</p>
+                            <p><strong>Phone:</strong> +977 (01) 5123456</p>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Shop</h4>
+                        <ul>
+                            <li><a href="#">Mobile Cases</a></li>
+                            <li><a href="#">AirPods Cases</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Laptop Accessories</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Returns</a></li>
+                            <li><a href="#">Warranty</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 CaseCraft. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <span>•</span>
+                        <a href="#">Terms of Service</a>
+                        <span>•</span>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Payment Dropdown
+            const paymentDropdown = document.getElementById('paymentDropdown');
+            const paymentSelected = document.getElementById('paymentSelected');
+            const paymentDropdownMenu = document.getElementById('paymentDropdownMenu');
+            const paymentOptions = document.querySelectorAll('.payment-option');
+            const cardDetails = document.getElementById('cardDetails');
+            let selectedPayment = 'cod';
+
+            // Toggle dropdown
+            paymentSelected.addEventListener('click', function(e) {
+                e.stopPropagation();
+                paymentDropdown.classList.toggle('active');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!paymentDropdown.contains(e.target)) {
+                    paymentDropdown.classList.remove('active');
+                }
+            });
+
+            // Handle payment option selection
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.stopPropagation();
+
+                    // Get selected payment info
+                    const value = this.dataset.value;
+                    const icon = this.querySelector('svg, .wallet-icon').cloneNode(true);
+                    const name = this.querySelector('.payment-method-name').textContent;
+                    const desc = this.querySelector('.payment-method-desc').textContent;
+
+                    // Update selected display
+                    const displayArea = paymentSelected.querySelector('.payment-method-display');
+                    displayArea.innerHTML = '';
+                    displayArea.appendChild(icon);
+
+                    const infoDiv = document.createElement('div');
+                    infoDiv.className = 'payment-method-info';
+                    infoDiv.innerHTML = `
+                        <span class="payment-method-name">${name}</span>
+                        <span class="payment-method-desc">${desc}</span>
+                    `;
+                    displayArea.appendChild(infoDiv);
+
+                    // Remove active class from all options
+                    paymentOptions.forEach(opt => opt.classList.remove('active'));
+                    // Add active class to selected option
+                    this.classList.add('active');
+
+                    // Store selected payment
+                    selectedPayment = value;
+
+                    // Show/hide card details
+                    if (value === 'card') {
+                        cardDetails.style.display = 'block';
+                        document.getElementById('cardNumber').required = true;
+                        document.getElementById('cardName').required = true;
+                        document.getElementById('expiryDate').required = true;
+                        document.getElementById('cvv').required = true;
+                    } else {
+                        cardDetails.style.display = 'none';
+                        document.getElementById('cardNumber').required = false;
+                        document.getElementById('cardName').required = false;
+                        document.getElementById('expiryDate').required = false;
+                        document.getElementById('cvv').required = false;
+                    }
+
+                    // Close dropdown
+                    paymentDropdown.classList.remove('active');
+                });
+            });
+
+            // Set first option as active by default
+            paymentOptions[0].classList.add('active');
+
+            // Card number formatting (UI enhancement)
+            document.getElementById('cardNumber').addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\s/g, '');
+                let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+                e.target.value = formattedValue;
+            });
+
+            // Expiry date formatting (UI enhancement)
+            document.getElementById('expiryDate').addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\s/g, '');
+                if (value.length >= 2) {
+                    value = value.slice(0, 2) + ' / ' + value.slice(2);
+                }
+                e.target.value = value;
+            });
+
+            // Phone number validation for Nepal
+            document.getElementById('phone').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                e.target.value = value;
+            });
+
+            // User Type Toggle (Guest vs Login)
+            const guestCheckoutBtn = document.getElementById('guestCheckout');
+            const loginCheckoutBtn = document.getElementById('loginCheckout');
+            const guestContactForm = document.getElementById('guestContactForm');
+            const loginForm = document.getElementById('loginForm');
+            const createAccountOption = document.getElementById('createAccountOption');
+
+            guestCheckoutBtn.addEventListener('click', function() {
+                // Toggle active states
+                guestCheckoutBtn.classList.add('active');
+                loginCheckoutBtn.classList.remove('active');
+
+                // Show/hide forms
+                guestContactForm.style.display = 'block';
+                loginForm.style.display = 'none';
+                if (createAccountOption) {
+                    createAccountOption.style.display = 'block';
+                }
+            });
+
+            loginCheckoutBtn.addEventListener('click', function() {
+                // Toggle active states
+                loginCheckoutBtn.classList.add('active');
+                guestCheckoutBtn.classList.remove('active');
+
+                // Show/hide forms
+                loginForm.style.display = 'block';
+                guestContactForm.style.display = 'none';
+                if (createAccountOption) {
+                    createAccountOption.style.display = 'none';
+                }
+            });
+
+            // Create Account Toggle
+            const createAccountCheckbox = document.getElementById('createAccount');
+            const createAccountFields = document.getElementById('createAccountFields');
+
+            if (createAccountCheckbox) {
+                createAccountCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        createAccountFields.style.display = 'block';
+                        document.getElementById('newPassword').required = true;
+                    } else {
+                        createAccountFields.style.display = 'none';
+                        document.getElementById('newPassword').required = false;
+                    }
+                });
+            }
+        </script>
+    </body>
+
+</html>
