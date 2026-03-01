@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist - CaseCraft</title>
+
+    <link rel="stylesheet" href="assets/css/wishlist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg cc-navbar sticky-top">
+        <div class="container-fluid">
+            <!-- Hamburger toggler (mobile + tablet, left of logo) -->
+            <button class="cc-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Logo -->
+            <a class="navbar-brand cc-logo" href="index.html">CaseCraft</a>
+
+            <!-- Mobile + Tablet: action icons on right -->
+            <div class="d-flex align-items-center gap-2 d-lg-none ms-auto">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <a href="wishlist.html" class="icon-btn wishlist-btn active" aria-label="Wishlist">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                    <span class="wishlist-count">4</span>
+                </a>
+                <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+
+            <!-- Desktop nav links (lg and up) -->
+            <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="cc-nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html">Phone Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=airpods">Airpod Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=watch">Watch Straps</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=accessories">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Desktop action icons (lg and up) -->
+            <div class="nav-actions d-none d-lg-flex align-items-center gap-2">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <a href="my-account.html" class="icon-btn" aria-label="Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </a>
+                <a href="wishlist.html" class="icon-btn wishlist-btn active" aria-label="Wishlist">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                    <span class="wishlist-count">4</span>
+                </a>
+                <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Wishlist Page -->
+    <div class="wishlist-page">
+        <div class="container-fluid">
+            <!-- Page Header -->
+            <div class="wishlist-header">
+                <div class="wishlist-title-group">
+                    <h1>My Wishlist</h1>
+                    <span class="item-count">(4 items)</span>
+                </div>
+                <div class="wishlist-actions">
+                    <button class="btn-secondary" id="shareWishlistBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="18" cy="5" r="3"/>
+                            <circle cx="6" cy="12" r="3"/>
+                            <circle cx="18" cy="19" r="3"/>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                        </svg>
+                        Share Wishlist
+                    </button>
+                    <button class="btn-primary" id="addAllToCartBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        Add All to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Wishlist Items -->
+            <div class="wishlist-content">
+                <div class="wishlist-items">
+                    <!-- Wishlist Item 1 -->
+                    <div class="wishlist-item" data-product-id="1">
+                        <button class="wishlist-remove-btn" aria-label="Remove from wishlist">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </button>
+                        <div class="wishlist-item-image">
+                            <a href="product-detail.html">
+                                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=300&h=300&fit=crop" alt="Premium Leather MagSafe Case">
+                            </a>
+                            <span class="stock-badge in-stock">In Stock</span>
+                        </div>
+                        <div class="wishlist-item-details">
+                            <a href="product-detail.html" class="wishlist-item-title">Premium Leather MagSafe Case</a>
+                            <div class="wishlist-item-meta">
+                                <span class="brand">iPhone 15 Pro Max</span>
+                                <span class="separator">•</span>
+                                <span class="color">Midnight Black</span>
+                            </div>
+                            <div class="wishlist-item-rating">
+                                <div class="stars">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                </div>
+                                <span class="rating-count">(128 reviews)</span>
+                            </div>
+                            <div class="wishlist-item-price">
+                                <span class="current-price">NPR 6,499</span>
+                                <span class="original-price">NPR 9,099</span>
+                                <span class="discount">29% OFF</span>
+                            </div>
+                            <p class="wishlist-item-added">Added on Falgun 10, 2082</p>
+                        </div>
+                        <div class="wishlist-item-actions">
+                            <button class="btn-add-to-cart">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                </svg>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Item 2 -->
+                    <div class="wishlist-item" data-product-id="2">
+                        <button class="wishlist-remove-btn" aria-label="Remove from wishlist">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </button>
+                        <div class="wishlist-item-image">
+                            <a href="product-detail.html">
+                                <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=300&h=300&fit=crop" alt="Silicone Protective Case">
+                            </a>
+                            <span class="stock-badge in-stock">In Stock</span>
+                        </div>
+                        <div class="wishlist-item-details">
+                            <a href="product-detail.html" class="wishlist-item-title">Silicone Protective Case</a>
+                            <div class="wishlist-item-meta">
+                                <span class="brand">iPhone 14 Pro</span>
+                                <span class="separator">•</span>
+                                <span class="color">Deep Purple</span>
+                            </div>
+                            <div class="wishlist-item-rating">
+                                <div class="stars">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                </div>
+                                <span class="rating-count">(95 reviews)</span>
+                            </div>
+                            <div class="wishlist-item-price">
+                                <span class="current-price">NPR 3,899</span>
+                            </div>
+                            <p class="wishlist-item-added">Added on Falgun 12, 2082</p>
+                        </div>
+                        <div class="wishlist-item-actions">
+                            <button class="btn-add-to-cart">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                </svg>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Item 3 -->
+                    <div class="wishlist-item" data-product-id="3">
+                        <button class="wishlist-remove-btn" aria-label="Remove from wishlist">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </button>
+                        <div class="wishlist-item-image">
+                            <a href="product-detail.html">
+                                <img src="https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=300&h=300&fit=crop" alt="Crystal Clear MagSafe Case">
+                            </a>
+                            <span class="stock-badge low-stock">Only 3 Left</span>
+                        </div>
+                        <div class="wishlist-item-details">
+                            <a href="product-detail.html" class="wishlist-item-title">Crystal Clear MagSafe Case</a>
+                            <div class="wishlist-item-meta">
+                                <span class="brand">iPhone 15</span>
+                                <span class="separator">•</span>
+                                <span class="color">Clear</span>
+                            </div>
+                            <div class="wishlist-item-rating">
+                                <div class="stars">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                </div>
+                                <span class="rating-count">(203 reviews)</span>
+                            </div>
+                            <div class="wishlist-item-price">
+                                <span class="current-price">NPR 5,199</span>
+                                <span class="original-price">NPR 7,799</span>
+                                <span class="discount">33% OFF</span>
+                            </div>
+                            <p class="wishlist-item-added">Added on Falgun 15, 2082</p>
+                        </div>
+                        <div class="wishlist-item-actions">
+                            <button class="btn-add-to-cart">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                </svg>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Item 4 -->
+                    <div class="wishlist-item" data-product-id="4">
+                        <button class="wishlist-remove-btn" aria-label="Remove from wishlist">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </button>
+                        <div class="wishlist-item-image">
+                            <a href="product-detail.html">
+                                <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=300&h=300&fit=crop" alt="Magnetic Wallet Case">
+                            </a>
+                            <span class="stock-badge out-of-stock">Out of Stock</span>
+                        </div>
+                        <div class="wishlist-item-details">
+                            <a href="product-detail.html" class="wishlist-item-title">Magnetic Wallet Case</a>
+                            <div class="wishlist-item-meta">
+                                <span class="brand">iPhone 15 Pro</span>
+                                <span class="separator">•</span>
+                                <span class="color">Brown Leather</span>
+                            </div>
+                            <div class="wishlist-item-rating">
+                                <div class="stars">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                </div>
+                                <span class="rating-count">(67 reviews)</span>
+                            </div>
+                            <div class="wishlist-item-price">
+                                <span class="current-price">NPR 5,849</span>
+                                <span class="original-price">NPR 7,149</span>
+                                <span class="discount">18% OFF</span>
+                            </div>
+                            <p class="wishlist-item-added">Added on Magh 28, 2082</p>
+                        </div>
+                        <div class="wishlist-item-actions">
+                            <button class="btn-notify-me">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                                </svg>
+                                Notify Me
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Sidebar -->
+                <div class="wishlist-sidebar">
+                    <!-- Wishlist Summary -->
+                    <div class="wishlist-summary-card">
+                        <h2>Wishlist Summary</h2>
+                        <div class="summary-row">
+                            <span>Total Items</span>
+                            <span class="value">4</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>In Stock</span>
+                            <span class="value success">3</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Out of Stock</span>
+                            <span class="value danger">1</span>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row total">
+                            <span>Total Value</span>
+                            <span class="value">NPR 21,446</span>
+                        </div>
+                        <p class="summary-note">Total savings: NPR 8,049</p>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions-card">
+                        <h3>Quick Actions</h3>
+                        <button class="action-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                            </svg>
+                            <span>Move All to Cart</span>
+                        </button>
+                        <button class="action-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3 6 5 6 21 6"/>
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                            </svg>
+                            <span>Clear Wishlist</span>
+                        </button>
+                        <button class="action-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            <span>Download List</span>
+                        </button>
+                    </div>
+
+                    <!-- Continue Shopping -->
+                    <div class="continue-shopping-card">
+                        <h3>Continue Shopping</h3>
+                        <p>Discover more premium cases and accessories</p>
+                        <a href="products.html" class="btn-continue">
+                            Browse Products
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container-fluid">
+            <div class="footer-content">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="url(#footerGradient)"/>
+                                <path d="M12 28V12L20 20L28 12V28L20 20L12 28Z" fill="white" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                                <defs>
+                                    <linearGradient id="footerGradient" x1="0" y1="0" x2="40" y2="40">
+                                        <stop offset="0%" stop-color="#667eea"/>
+                                        <stop offset="100%" stop-color="#764ba2"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="footer-logo-text">Case<span class="gradient-text">Craft</span></span>
+                    </div>
+                    <p class="footer-desc">Premium tech accessories designed for the modern lifestyle. Quality you can trust, style you can feel.</p>
+                    <div class="footer-contact">
+                        <p><strong>Contact:</strong> support@casecraft.com</p>
+                        <p><strong>Phone:</strong> +977 (01) 5123456</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html">Mobile Cases</a></li>
+                        <li><a href="products.html?category=airpods">AirPods Cases</a></li>
+                        <li><a href="products.html?category=accessories">Accessories</a></li>
+                        <li><a href="products.html?category=watch">Watch Straps</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Warranty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CaseCraft. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#">Terms of Service</a>
+                    <span>•</span>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Wishlist functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove from wishlist
+            const removeButtons = document.querySelectorAll('.wishlist-remove-btn');
+            removeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const item = this.closest('.wishlist-item');
+                    item.style.animation = 'fadeOut 0.3s ease-out';
+                    setTimeout(() => {
+                        item.remove();
+                        updateWishlistCount();
+                    }, 300);
+                });
+            });
+
+            // Add to cart
+            const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
+            addToCartButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = this.closest('.wishlist-item').dataset.productId;
+                    console.log('Adding product to cart:', productId);
+                    this.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Added to Cart';
+                    this.style.background = 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)';
+                    setTimeout(() => {
+                        this.closest('.wishlist-item').style.animation = 'fadeOut 0.3s ease-out';
+                        setTimeout(() => {
+                            this.closest('.wishlist-item').remove();
+                            updateWishlistCount();
+                        }, 300);
+                    }, 1500);
+                });
+            });
+
+            // Notify me button
+            const notifyButtons = document.querySelectorAll('.btn-notify-me');
+            notifyButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Notification Set';
+                    this.style.background = 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)';
+                    this.disabled = true;
+                });
+            });
+
+            // Add all to cart
+            document.getElementById('addAllToCartBtn')?.addEventListener('click', function() {
+                const inStockItems = document.querySelectorAll('.wishlist-item .stock-badge.in-stock');
+                console.log(`Adding ${inStockItems.length} items to cart`);
+                alert(`${inStockItems.length} items added to cart!`);
+            });
+
+            // Share wishlist
+            document.getElementById('shareWishlistBtn')?.addEventListener('click', function() {
+                alert('Share wishlist functionality - Copy link or share via social media');
+            });
+
+            function updateWishlistCount() {
+                const count = document.querySelectorAll('.wishlist-item').length;
+                document.querySelectorAll('.wishlist-count').forEach(el => {
+                    el.textContent = count;
+                });
+                document.querySelector('.wishlist-header .item-count').textContent = `(${count} items)`;
+            }
+        });
+    </script>
+</body>
+</html>

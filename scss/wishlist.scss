@@ -1,0 +1,16 @@
+// Import base styles and variables
+@import 'base/css-variables';
+@import 'base/variables';
+
+// Import Bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// Import Base Utilities
+@import 'base/utilities';
+
+// Import components
+@import 'components/cstm-navbar';
+@import 'components/cstm-footer';
+
+// Import page-specific styles
+@import 'pages/wishlist';
