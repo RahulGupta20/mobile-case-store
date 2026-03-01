@@ -930,6 +930,117 @@
                                 <p class="review-text">Great protection and the MagSafe works perfectly. The leather feels premium and ages beautifully.</p>
                             </div>
                         </div>
+
+                        <!-- Write a Review Section -->
+                        <div class="write-review-section">
+                            <div class="write-review-header">
+                                <h3>Write a Review</h3>
+                                <p>Share your experience with this product</p>
+                            </div>
+
+                            <form id="reviewForm" class="review-form">
+                                <!-- Rating Selection -->
+                                <div class="form-group">
+                                    <label class="form-label">Your Rating *</label>
+                                    <div class="star-rating-input">
+                                        <input type="radio" name="rating" id="star5" value="5" required>
+                                        <label for="star5" class="star">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                            </svg>
+                                        </label>
+                                        <input type="radio" name="rating" id="star4" value="4">
+                                        <label for="star4" class="star">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                            </svg>
+                                        </label>
+                                        <input type="radio" name="rating" id="star3" value="3">
+                                        <label for="star3" class="star">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                            </svg>
+                                        </label>
+                                        <input type="radio" name="rating" id="star2" value="2">
+                                        <label for="star2" class="star">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                            </svg>
+                                        </label>
+                                        <input type="radio" name="rating" id="star1" value="1">
+                                        <label for="star1" class="star">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                            </svg>
+                                        </label>
+                                        <span class="rating-text" id="ratingText">Select a rating</span>
+                                    </div>
+                                </div>
+
+                                <!-- Name Input -->
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="reviewerName" class="form-label">Your Name *</label>
+                                        <input type="text" id="reviewerName" name="reviewerName" required placeholder="Enter your name">
+                                    </div>
+
+                                    <!-- Email Input -->
+                                    <div class="form-group">
+                                        <label for="reviewerEmail" class="form-label">Email *</label>
+                                        <input type="email" id="reviewerEmail" name="reviewerEmail" required placeholder="your@email.com">
+                                        <small class="form-hint">Your email will not be published</small>
+                                    </div>
+                                </div>
+
+                                <!-- Review Title -->
+                                <div class="form-group">
+                                    <label for="reviewTitle" class="form-label">Review Title *</label>
+                                    <input type="text" id="reviewTitle" name="reviewTitle" required placeholder="Summarize your experience">
+                                </div>
+
+                                <!-- Review Text -->
+                                <div class="form-group">
+                                    <label for="reviewText" class="form-label">Your Review *</label>
+                                    <textarea id="reviewText" name="reviewText" rows="5" required placeholder="Tell us about your experience with this product..."></textarea>
+                                    <small class="form-hint character-count">
+                                        <span id="charCount">0</span> / 500 characters
+                                    </small>
+                                </div>
+
+                                <!-- Verified Purchase Checkbox -->
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="verifiedPurchase" id="verifiedPurchase">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">I purchased this product</span>
+                                    </label>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-submit-review">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M22 2L11 13"/>
+                                            <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+                                        </svg>
+                                        Submit Review
+                                    </button>
+                                    <button type="button" class="btn-cancel-review" id="cancelReview">Cancel</button>
+                                </div>
+                            </form>
+
+                            <!-- Success Message (Hidden by default) -->
+                            <div class="review-success-message" id="reviewSuccess" style="display: none;">
+                                <div class="success-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                </div>
+                                <h4>Thank you for your review!</h4>
+                                <p>Your review has been submitted and will be published after moderation.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1331,6 +1442,167 @@
             $('.btn-buy-now').on('click', function() {
                 window.location.href = 'cart.html';
             });
+
+            // ─── Review Submission Functionality ───────────────────────
+
+            // Star Rating Selection
+            const ratingInputs = $('input[name="rating"]');
+            const ratingText = $('#ratingText');
+            const ratingLabels = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+
+            ratingInputs.on('change', function() {
+                const rating = $(this).val();
+                ratingText.text(ratingLabels[rating - 1] + ' (' + rating + ' stars)');
+                ratingText.css('color', '#FFA500');
+            });
+
+            // Character Counter for Review Text
+            const reviewTextArea = $('#reviewText');
+            const charCount = $('#charCount');
+            const maxChars = 500;
+
+            reviewTextArea.on('input', function() {
+                const currentLength = $(this).val().length;
+                charCount.text(currentLength);
+
+                // Change color when approaching limit
+                if (currentLength > maxChars * 0.9) {
+                    charCount.css('color', '#ef4444');
+                } else if (currentLength > maxChars * 0.75) {
+                    charCount.css('color', '#f59e0b');
+                } else {
+                    charCount.css('color', '#895CF2');
+                }
+
+                // Enforce max length
+                if (currentLength > maxChars) {
+                    $(this).val($(this).val().substring(0, maxChars));
+                    charCount.text(maxChars);
+                }
+            });
+
+            // Review Form Submission
+            const reviewForm = $('#reviewForm');
+            const reviewSuccess = $('#reviewSuccess');
+
+            reviewForm.on('submit', function(e) {
+                e.preventDefault();
+
+                // Get form data
+                const formData = {
+                    rating: $('input[name="rating"]:checked').val(),
+                    reviewerName: $('#reviewerName').val(),
+                    reviewerEmail: $('#reviewerEmail').val(),
+                    reviewTitle: $('#reviewTitle').val(),
+                    reviewText: $('#reviewText').val(),
+                    verifiedPurchase: $('#verifiedPurchase').is(':checked'),
+                    productId: 'product-123', // This would come from the actual product
+                    timestamp: new Date().toISOString()
+                };
+
+                // Validate form
+                if (!formData.rating) {
+                    alert('Please select a rating');
+                    return;
+                }
+
+                if (formData.reviewText.length < 10) {
+                    alert('Please write a review with at least 10 characters');
+                    return;
+                }
+
+                // Show loading state
+                const submitBtn = $('.btn-submit-review');
+                const originalBtnText = submitBtn.html();
+                submitBtn.prop('disabled', true);
+                submitBtn.html('<svg class="spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" opacity="0.3"/><path d="M12 2a10 10 0 0 1 10 10"/></svg> Submitting...');
+
+                // Add spinner animation
+                $('<style>.spinner { width: 20px; height: 20px; animation: spin 1s linear infinite; } @keyframes spin { 100% { transform: rotate(360deg); } }</style>').appendTo('head');
+
+                // Simulate API call (replace with actual API call in production)
+                setTimeout(function() {
+                    console.log('Review submitted:', formData);
+
+                    // Store in localStorage (temporary - replace with backend)
+                    let reviews = JSON.parse(localStorage.getItem('productReviews') || '[]');
+                    reviews.push(formData);
+                    localStorage.setItem('productReviews', JSON.stringify(reviews));
+
+                    // Hide form and show success message
+                    reviewForm.fadeOut(300, function() {
+                        reviewSuccess.fadeIn(300);
+
+                        // Scroll to success message
+                        $('html, body').animate({
+                            scrollTop: reviewSuccess.offset().top - 100
+                        }, 500);
+                    });
+
+                    // Reset form
+                    reviewForm[0].reset();
+                    ratingText.text('Select a rating').css('color', '#a3a3a3');
+                    charCount.text('0').css('color', '#895CF2');
+                    submitBtn.prop('disabled', false);
+                    submitBtn.html(originalBtnText);
+
+                    // Optionally add the review to the page dynamically
+                    addReviewToList(formData);
+
+                }, 1500);
+            });
+
+            // Cancel Review
+            $('#cancelReview').on('click', function() {
+                if (confirm('Are you sure you want to cancel? Your review will not be saved.')) {
+                    reviewForm[0].reset();
+                    ratingText.text('Select a rating').css('color', '#a3a3a3');
+                    charCount.text('0').css('color', '#895CF2');
+                }
+            });
+
+            // Function to add review to the list (optional - for instant feedback)
+            function addReviewToList(reviewData) {
+                const reviewHtml = `
+                    <div class="review-item" style="animation: fadeIn 0.5s ease-in;">
+                        <div class="review-header">
+                            <div>
+                                <strong>${reviewData.reviewerName}</strong>
+                                ${reviewData.verifiedPurchase ? '<span class="verified-badge" style="background: linear-gradient(135deg, #22c55e 0%, #10b981 100%); color: white; font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 4px; margin-left: 0.5rem;">Verified Purchase</span>' : ''}
+                                <div class="stars small">
+                                    ${'<svg viewBox="0 0 24 24" fill="#FFA500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>'.repeat(parseInt(reviewData.rating))}
+                                    ${'<svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.1)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>'.repeat(5 - parseInt(reviewData.rating))}
+                                </div>
+                            </div>
+                            <span class="review-date">Just now</span>
+                        </div>
+                        <h4 style="color: #e5e5e5; font-size: 1rem; margin: 0.75rem 0 0.5rem;">${reviewData.reviewTitle}</h4>
+                        <p class="review-text">${reviewData.reviewText}</p>
+                        <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 6px; padding: 0.75rem 1rem; margin-top: 1rem; font-size: 0.875rem; color: #22c55e;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; display: inline-block; margin-right: 0.5rem;">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            Your review is pending moderation and will be published soon.
+                        </div>
+                    </div>
+                `;
+
+                // Add CSS animation
+                $('<style>@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }</style>').appendTo('head');
+
+                // Prepend to review list
+                $('.review-list').prepend(reviewHtml);
+            }
+
+            // Load existing reviews from localStorage on page load (optional)
+            function loadReviews() {
+                const reviews = JSON.parse(localStorage.getItem('productReviews') || '[]');
+                // Filter reviews for current product and display them
+                // This is a simplified version - in production, you'd filter by product ID
+                console.log('Loaded reviews:', reviews.length);
+            }
+
+            loadReviews();
         });
     </script>
 </body>
