@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════════════
 // Mobile Slide Navigation System
-// Handles 3-level mobile menu navigation (Main → Brand → Model)
+// Handles 4-level mobile menu navigation (Main → Brands → Models → Series)
 // ═══════════════════════════════════════════════════════════════
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileSlideTriggers.forEach(trigger => {
         trigger.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetMenuId = 'mobile' + this.getAttribute('data-target').charAt(0).toUpperCase() + this.getAttribute('data-target').slice(1);
+            const targetMenuId = this.getAttribute('data-target');
             const currentMenu = this.closest('.mobile-slide-menu');
             const targetMenu = document.getElementById(targetMenuId);
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileBackButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            const backToMenuId = 'mobile' + this.getAttribute('data-back').charAt(0).toUpperCase() + this.getAttribute('data-back').slice(1);
+            const backToMenuId = this.getAttribute('data-back');
             const currentMenu = this.closest('.mobile-slide-menu');
             const backToMenu = document.getElementById(backToMenuId);
 
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 menu.classList.remove('active', 'slide-back');
             });
             // Activate main menu
-            const mainMenu = document.getElementById('mobileMainMenu');
+            const mainMenu = document.getElementById('main');
             if (mainMenu) {
                 mainMenu.classList.add('active');
             }
