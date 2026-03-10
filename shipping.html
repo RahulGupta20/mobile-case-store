@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping & Delivery - CaseCraft</title>
+    <link rel="stylesheet" href="assets/css/shipping.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg cc-navbar sticky-top">
+        <div class="container-fluid">
+            <!-- Hamburger toggler (mobile + tablet, left of logo) -->
+            <button class="cc-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Logo -->
+            <a class="navbar-brand cc-logo" href="index.html">CaseCraft</a>
+
+            <!-- Mobile + Tablet: action icons on right -->
+            <div class="d-flex align-items-center gap-2 d-lg-none ms-auto">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+
+            <!-- Desktop nav links (lg and up) -->
+            <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="cc-nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html">Phone Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=airpods">Airpod Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=watch">Watch Straps</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=accessories">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Desktop action icons (lg and up) -->
+            <div class="nav-actions d-none d-lg-flex align-items-center gap-2">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <a href="my-account.html" class="icon-btn" aria-label="Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </a>
+                <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shipping Page -->
+    <main class="shipping-page">
+        <div class="container-fluid">
+            <!-- Page Header -->
+            <section class="shipping-header">
+                <h1>Shipping & Delivery</h1>
+                <p class="header-subtitle">Everything you need to know about our shipping and delivery process</p>
+            </section>
+
+            <!-- Delivery Timeline -->
+            <section class="delivery-timeline-section">
+                <h2>Delivery Timeline</h2>
+                <p class="section-intro">We strive to deliver your orders as quickly as possible. Here's what you can expect:</p>
+
+                <div class="timeline-grid">
+                    <div class="timeline-card">
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Kathmandu Valley</h3>
+                        <div class="timeline-days">1-2 Days</div>
+                        <p>Orders within Kathmandu Valley are delivered within 1-2 business days from order confirmation.</p>
+                    </div>
+
+                    <div class="timeline-card">
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Major Cities</h3>
+                        <div class="timeline-days">3-5 Days</div>
+                        <p>Deliveries to Pokhara, Chitwan, Biratnagar, and other major cities take 3-5 business days.</p>
+                    </div>
+
+                    <div class="timeline-card">
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            </svg>
+                        </div>
+                        <h3>Remote Areas</h3>
+                        <div class="timeline-days">5-7 Days</div>
+                        <p>Orders to remote locations may take 5-7 business days depending on accessibility and weather conditions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Shipping Rates -->
+            <section class="shipping-rates-section">
+                <h2>Shipping Rates</h2>
+
+                <div class="rates-grid">
+                    <div class="rate-card featured">
+                        <div class="rate-badge">Most Popular</div>
+                        <div class="rate-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Free Shipping</h3>
+                        <div class="rate-price">Rs. 0</div>
+                        <p>For orders above <strong>Rs. 2,000</strong> within Kathmandu Valley</p>
+                        <ul>
+                            <li>1-2 business days delivery</li>
+                            <li>Order tracking included</li>
+                            <li>SMS notifications</li>
+                        </ul>
+                    </div>
+
+                    <div class="rate-card">
+                        <div class="rate-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                        </div>
+                        <h3>Standard Delivery</h3>
+                        <div class="rate-price">Rs. 100</div>
+                        <p>For orders below Rs. 2,000 within Kathmandu Valley</p>
+                        <ul>
+                            <li>1-2 business days delivery</li>
+                            <li>Order tracking included</li>
+                            <li>Secure packaging</li>
+                        </ul>
+                    </div>
+
+                    <div class="rate-card">
+                        <div class="rate-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Outside Valley</h3>
+                        <div class="rate-price">Calculated</div>
+                        <p>Based on location and order weight</p>
+                        <ul>
+                            <li>3-7 business days delivery</li>
+                            <li>Rates shown at checkout</li>
+                            <li>Reliable courier partners</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Delivery Process -->
+            <section class="delivery-process-section">
+                <h2>How Delivery Works</h2>
+                <p class="section-intro">Our streamlined delivery process ensures your order reaches you safely and on time</p>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Order Confirmation</h3>
+                            <p>Once you place your order, you'll receive an email confirmation with your order details and estimated delivery date.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>Order Processing</h3>
+                            <p>Our team carefully packs your items with premium packaging materials to ensure safe delivery. Orders placed before 2 PM are processed the same day.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Shipment & Tracking</h3>
+                            <p>Your order is dispatched with a tracking number sent via email and SMS. Track your package in real-time using our <a href="order-tracking.html">order tracking page</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Delivery</h3>
+                            <p>Our delivery partner will contact you before delivery. Please ensure someone is available to receive the package and verify the items.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Delivery Partners -->
+            <section class="delivery-partners-section">
+                <h2>Our Delivery Partners</h2>
+                <p class="section-intro">We work with trusted courier services to ensure reliable and timely delivery</p>
+
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-placeholder">Partner Logo</div>
+                        <h3>Express Delivery</h3>
+                        <p>Kathmandu Valley</p>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-placeholder">Partner Logo</div>
+                        <h3>Nationwide Courier</h3>
+                        <p>All Nepal Coverage</p>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-placeholder">Partner Logo</div>
+                        <h3>Premium Logistics</h3>
+                        <p>Major Cities</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Important Information -->
+            <section class="important-info-section">
+                <h2>Important Delivery Information</h2>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon warning">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h3>Verify Your Order</h3>
+                        <p>Always check the package contents before accepting delivery. If items are damaged or incorrect, refuse the delivery and contact us immediately.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon success">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Accurate Address</h3>
+                        <p>Provide complete and accurate delivery address including landmarks. Incorrect addresses may cause delivery delays or failed attempts.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon info">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                        </div>
+                        <h3>Contact Information</h3>
+                        <p>Keep your phone number active during delivery. Our courier partner will call you before delivery to confirm your availability.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h3>Secure Packaging</h3>
+                        <p>All orders are packed with bubble wrap and secure boxes. Fragile items receive extra protection to prevent damage during transit.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Circumstances -->
+            <section class="special-circumstances-section">
+                <h2>Special Circumstances</h2>
+
+                <div class="circumstances-grid">
+                    <div class="circumstance-card">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/>
+                                <path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/>
+                            </svg>
+                            No One at Home
+                        </h3>
+                        <p>If no one is available to receive the delivery, our courier will attempt delivery 2-3 times. You can also arrange pickup from the nearest courier office or reschedule delivery.</p>
+                    </div>
+
+                    <div class="circumstance-card">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                            Festival & Holiday Delays
+                        </h3>
+                        <p>During major festivals (Dashain, Tihar) and public holidays, deliveries may take 1-2 additional days. We'll notify you of any expected delays.</p>
+                    </div>
+
+                    <div class="circumstance-card">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                            Weather Conditions
+                        </h3>
+                        <p>Adverse weather conditions (heavy rain, landslides, snowfall) in certain areas may cause temporary delays. Safety is our priority.</p>
+                    </div>
+
+                    <div class="circumstance-card">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="8.5" cy="7" r="4"></circle>
+                                <polyline points="17 11 19 13 23 9"></polyline>
+                            </svg>
+                        </h3>
+                        <h3>ID Verification</h3>
+                        <p>For high-value orders (above Rs. 10,000), our courier may request ID verification to ensure secure delivery to the right person.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Have Questions About Delivery?</h2>
+                    <p>Contact our support team or track your order for real-time updates</p>
+                    <div class="cta-buttons">
+                        <a href="order-tracking.html" class="btn-primary">Track Your Order</a>
+                        <a href="contact.html" class="btn-secondary">Contact Support</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="footer-content">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="url(#footerGradient)"/>
+                                <path d="M12 28V12L20 20L28 12V28L20 20L12 28Z" fill="white" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                                <defs>
+                                    <linearGradient id="footerGradient" x1="0" y1="0" x2="40" y2="40">
+                                        <stop offset="0%" stop-color="#667eea"/>
+                                        <stop offset="100%" stop-color="#764ba2"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="footer-logo-text">Case<span class="gradient-text">Craft</span></span>
+                    </div>
+                    <p class="footer-desc">Premium tech accessories designed for the modern lifestyle. Quality you can trust, style you can feel.</p>
+                    <div class="footer-contact">
+                        <p><strong>Contact:</strong> support@casecraft.com</p>
+                        <p><strong>Phone:</strong> +977 (01) 5123456</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html">Mobile Cases</a></li>
+                        <li><a href="products.html?category=airpods">AirPods Cases</a></li>
+                        <li><a href="products.html?category=watch">Watch Straps</a></li>
+                        <li><a href="products.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="order-tracking.html">Track Order</a></li>
+                        <li><a href="shipping.html">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CaseCraft. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#">Terms of Service</a>
+                    <span>•</span>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation Offcanvas -->
+    <div class="offcanvas offcanvas-start cc-offcanvas" tabindex="-1" id="mobileNav">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" data-bs-dismiss="offcanvas">Home</a></li>
+                <li><a href="products.html" data-bs-dismiss="offcanvas">Phone Cases</a></li>
+                <li><a href="products.html?category=airpods" data-bs-dismiss="offcanvas">Airpod Cases</a></li>
+                <li><a href="products.html?category=watch" data-bs-dismiss="offcanvas">Watch Straps</a></li>
+                <li><a href="products.html?category=accessories" data-bs-dismiss="offcanvas">Accessories</a></li>
+                <li><a href="about.html" data-bs-dismiss="offcanvas">About Us</a></li>
+                <li><a href="faq.html" data-bs-dismiss="offcanvas">FAQ</a></li>
+                <li><a href="shipping.html" data-bs-dismiss="offcanvas">Shipping Info</a></li>
+                <li><a href="contact.html" data-bs-dismiss="offcanvas">Contact Us</a></li>
+                <li><a href="order-tracking.html" data-bs-dismiss="offcanvas">Track Order</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Cart functionality -->
+    <script>
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCounts = document.querySelectorAll('.cart-count');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+            cartCounts.forEach(count => {
+                count.textContent = totalItems;
+                count.style.display = totalItems > 0 ? 'flex' : 'none';
+            });
+        }
+
+        updateCartCount();
+    </script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Frequently Asked Questions - CaseCraft</title>
+    <link rel="stylesheet" href="assets/css/faq.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg cc-navbar sticky-top">
+        <div class="container-fluid">
+            <!-- Hamburger toggler (mobile + tablet, left of logo) -->
+            <button class="cc-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Logo -->
+            <a class="navbar-brand cc-logo" href="index.html">CaseCraft</a>
+
+            <!-- Mobile + Tablet: action icons on right -->
+            <div class="d-flex align-items-center gap-2 d-lg-none ms-auto">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+
+            <!-- Desktop nav links (lg and up) -->
+            <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="cc-nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html">Phone Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=airpods">Airpod Cases</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=watch">Watch Straps</a></li>
+                    <li class="nav-item"><a class="cc-nav-link" href="products.html?category=accessories">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Desktop action icons (lg and up) -->
+            <div class="nav-actions d-none d-lg-flex align-items-center gap-2">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+                <a href="my-account.html" class="icon-btn" aria-label="Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </a>
+                <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAQ Page -->
+    <main class="faq-page">
+        <div class="container-fluid">
+            <!-- Page Header -->
+            <section class="faq-header">
+                <h1>Frequently Asked Questions</h1>
+                <p class="header-subtitle">Find answers to common questions about our products and services</p>
+
+                <!-- Search Box -->
+                <div class="faq-search">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="faqSearch" placeholder="Search for answers..." />
+                </div>
+            </section>
+
+            <!-- Quick Links -->
+            <section class="quick-links-section">
+                <div class="quick-links">
+                    <button class="quick-link-btn active" data-category="all">All Questions</button>
+                    <button class="quick-link-btn" data-category="orders">Orders & Shipping</button>
+                    <button class="quick-link-btn" data-category="products">Products</button>
+                    <button class="quick-link-btn" data-category="returns">Returns & Refunds</button>
+                    <button class="quick-link-btn" data-category="payment">Payment</button>
+                    <button class="quick-link-btn" data-category="account">Account</button>
+                </div>
+            </section>
+
+            <!-- FAQ Sections -->
+            <section class="faq-content">
+                <!-- Orders & Shipping -->
+                <div class="faq-category" data-category="orders">
+                    <h2 class="category-title">Orders & Shipping</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How long does shipping take?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Shipping times vary based on your location:</p>
+                            <ul>
+                                <li><strong>Within Kathmandu Valley:</strong> 1-2 business days</li>
+                                <li><strong>Outside Valley (major cities):</strong> 3-5 business days</li>
+                                <li><strong>Remote areas:</strong> 5-7 business days</li>
+                            </ul>
+                            <p>Orders placed before 2 PM are usually processed the same day. You'll receive a tracking number once your order ships.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you offer free shipping?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We offer free shipping on orders over Rs. 2,000 within Kathmandu Valley. For orders below Rs. 2,000, a flat shipping fee of Rs. 100 applies. Outside the valley, shipping costs are calculated based on your location and order weight.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How can I track my order?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can track your order in two ways:</p>
+                            <ol>
+                                <li>Visit our <a href="order-tracking.html">Order Tracking</a> page and enter your order number and phone number</li>
+                                <li>Check your email for the tracking link sent when your order ships</li>
+                            </ol>
+                            <p>If you have an account, you can also view all your orders in the <a href="my-account.html">My Account</a> section.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I change my shipping address after placing an order?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, but only if your order hasn't been shipped yet. Please contact us immediately at <a href="tel:+97715123456">+977 (01) 5123456</a> or email <a href="mailto:support@casecraft.com">support@casecraft.com</a> with your order number and new address. Once shipped, the address cannot be changed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div class="faq-category" data-category="products">
+                    <h2 class="category-title">Products</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What materials are your cases made from?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We use premium materials for all our products:</p>
+                            <ul>
+                                <li><strong>TPU (Thermoplastic Polyurethane):</strong> Flexible, shock-absorbent, and durable</li>
+                                <li><strong>Polycarbonate:</strong> Hard shell protection with scratch resistance</li>
+                                <li><strong>Silicone:</strong> Soft-touch, anti-slip grip</li>
+                                <li><strong>Genuine Leather:</strong> Premium leather cases for a luxurious feel</li>
+                                <li><strong>Tempered Glass:</strong> For screen protectors with 9H hardness</li>
+                            </ul>
+                            <p>All materials are tested for quality and safety standards.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do I know which case fits my phone?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Each product page clearly states which phone models the case is compatible with. When browsing, use our filters to select your specific phone model. If you're unsure, check your phone's exact model in Settings > About Phone, or contact our support team for assistance.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do your cases support wireless charging?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! Most of our cases are wireless charging compatible. This information is clearly mentioned on each product page. Look for the "Wireless Charging" badge or check the product specifications. Cases thicker than 3mm may affect wireless charging efficiency.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I customize a phone case with my own design?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We offer custom design services for bulk orders (minimum 10 pieces). Contact us at <a href="mailto:custom@casecraft.com">custom@casecraft.com</a> with your design requirements, phone model, and quantity. Our team will provide a quote and timeline within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Returns & Refunds -->
+                <div class="faq-category" data-category="returns">
+                    <h2 class="category-title">Returns & Refunds</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What is your return policy?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer a 7-day return policy from the date of delivery. To be eligible for a return:</p>
+                            <ul>
+                                <li>Item must be unused and in original packaging</li>
+                                <li>Include all accessories and documentation</li>
+                                <li>Provide proof of purchase (order number or invoice)</li>
+                                <li>Item must not be damaged or show signs of use</li>
+                            </ul>
+                            <p>Contact our support team to initiate a return. Some items may not be eligible for return due to hygiene reasons.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How long does it take to receive a refund?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Once we receive and inspect your returned item, refunds are processed within 3-5 business days. The refund will be credited to your original payment method:</p>
+                            <ul>
+                                <li><strong>Cash on Delivery:</strong> Bank transfer (provide account details)</li>
+                                <li><strong>Online Payment:</strong> Original payment method</li>
+                                <li><strong>Card Payment:</strong> Refund to card (may take 7-10 business days to reflect)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I exchange an item instead of returning it?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We offer exchanges for different sizes, colors, or models within 7 days of delivery. The exchange process is faster than return and refund. Contact our support team with your order number and desired exchange details. Exchanges are subject to product availability.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What if I receive a damaged or defective product?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We're sorry if this happens! Contact us immediately (within 48 hours of delivery) with photos of the damaged item and packaging. We'll arrange a free replacement or full refund with free return pickup. Quality is our priority, and defective items are rare.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment -->
+                <div class="faq-category" data-category="payment">
+                    <h2 class="category-title">Payment</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What payment methods do you accept?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept multiple payment methods for your convenience:</p>
+                            <ul>
+                                <li><strong>Cash on Delivery (COD):</strong> Pay when you receive your order</li>
+                                <li><strong>eSewa:</strong> Digital wallet payment</li>
+                                <li><strong>Khalti:</strong> Digital wallet payment</li>
+                                <li><strong>Bank Transfer:</strong> Direct bank deposit</li>
+                                <li><strong>Credit/Debit Cards:</strong> Visa, Mastercard</li>
+                                <li><strong>Connect IPS:</strong> Internet banking payment</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is it safe to use my credit card on your site?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! We use industry-standard SSL encryption to protect your payment information. All card transactions are processed through secure payment gateways that comply with PCI-DSS standards. We never store your complete card details on our servers.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I use multiple payment methods for one order?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Currently, we only support one payment method per order. However, if you'd like to split your payment, please contact our support team before placing your order, and we'll try to accommodate your request for larger purchases.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you offer EMI or installment options?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Currently, EMI options are not available directly on our site. However, you may be able to convert your purchase to EMI through your credit card bank's portal after the transaction. Check with your bank for available EMI schemes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account -->
+                <div class="faq-category" data-category="account">
+                    <h2 class="category-title">Account & Profile</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do I need an account to place an order?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, you can checkout as a guest. However, creating an account offers benefits like order tracking, saved addresses, wishlist, faster checkout, and exclusive member offers. It only takes a minute to <a href="signup.html">sign up</a>!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do I reset my password?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Visit the <a href="forgot-password.html">Forgot Password</a> page and enter your registered email. You'll receive a password reset link via email within a few minutes. Click the link and set your new password. If you don't receive the email, check your spam folder or contact support.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I change my registered email address?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, you can update your email address in the <a href="my-account.html">My Account</a> section under Profile Settings. For security reasons, you'll need to verify both your old and new email addresses through verification links.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do I delete my account?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We're sad to see you go! To delete your account, please contact our support team at <a href="mailto:support@casecraft.com">support@casecraft.com</a> with your registered email. We'll process your request within 24-48 hours. Note that this action is permanent and cannot be undone.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Still Have Questions CTA -->
+            <section class="help-cta">
+                <div class="help-cta-content">
+                    <div class="help-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h2>Still have questions?</h2>
+                    <p>Can't find the answer you're looking for? Our customer support team is here to help.</p>
+                    <div class="help-buttons">
+                        <a href="contact.html" class="btn-primary">Contact Support</a>
+                        <a href="tel:+97715123456" class="btn-secondary">Call Us</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="footer-content">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="url(#footerGradient)"/>
+                                <path d="M12 28V12L20 20L28 12V28L20 20L12 28Z" fill="white" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                                <defs>
+                                    <linearGradient id="footerGradient" x1="0" y1="0" x2="40" y2="40">
+                                        <stop offset="0%" stop-color="#667eea"/>
+                                        <stop offset="100%" stop-color="#764ba2"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="footer-logo-text">Case<span class="gradient-text">Craft</span></span>
+                    </div>
+                    <p class="footer-desc">Premium tech accessories designed for the modern lifestyle. Quality you can trust, style you can feel.</p>
+                    <div class="footer-contact">
+                        <p><strong>Contact:</strong> support@casecraft.com</p>
+                        <p><strong>Phone:</strong> +977 (01) 5123456</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html">Mobile Cases</a></li>
+                        <li><a href="products.html?category=airpods">AirPods Cases</a></li>
+                        <li><a href="products.html?category=watch">Watch Straps</a></li>
+                        <li><a href="products.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="order-tracking.html">Track Order</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CaseCraft. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#">Terms of Service</a>
+                    <span>•</span>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation Offcanvas -->
+    <div class="offcanvas offcanvas-start cc-offcanvas" tabindex="-1" id="mobileNav">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" data-bs-dismiss="offcanvas">Home</a></li>
+                <li><a href="products.html" data-bs-dismiss="offcanvas">Phone Cases</a></li>
+                <li><a href="products.html?category=airpods" data-bs-dismiss="offcanvas">Airpod Cases</a></li>
+                <li><a href="products.html?category=watch" data-bs-dismiss="offcanvas">Watch Straps</a></li>
+                <li><a href="products.html?category=accessories" data-bs-dismiss="offcanvas">Accessories</a></li>
+                <li><a href="about.html" data-bs-dismiss="offcanvas">About Us</a></li>
+                <li><a href="faq.html" data-bs-dismiss="offcanvas">FAQ</a></li>
+                <li><a href="contact.html" data-bs-dismiss="offcanvas">Contact Us</a></li>
+                <li><a href="order-tracking.html" data-bs-dismiss="offcanvas">Track Order</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- FAQ functionality -->
+    <script src="assets/js/faq.js"></script>
+
+    <!-- Cart functionality -->
+    <script>
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCounts = document.querySelectorAll('.cart-count');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+            cartCounts.forEach(count => {
+                count.textContent = totalItems;
+                count.style.display = totalItems > 0 ? 'flex' : 'none';
+            });
+        }
+
+        updateCartCount();
+    </script>
+</body>
+</html>

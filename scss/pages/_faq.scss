@@ -1,0 +1,418 @@
+// ═══════════════════════════════════════════════════════════
+// FAQ PAGE STYLES
+// ═══════════════════════════════════════════════════════════
+
+.faq-page {
+    min-height: 100vh;
+    background: $bg-primary;
+    padding-bottom: 4rem;
+}
+
+// ═══════════════════════════════════════════════════════════
+// PAGE HEADER
+// ═══════════════════════════════════════════════════════════
+
+.faq-header {
+    text-align: center;
+    padding: 4rem 1.5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        padding: 3rem 1.5rem 2rem;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 5vw, 3rem);
+        font-weight: 700;
+        background: $accent-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+    }
+
+    .header-subtitle {
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        color: $text-secondary;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+}
+
+// ═══════════════════════════════════════════════════════════
+// SEARCH BOX
+// ═══════════════════════════════════════════════════════════
+
+.faq-search {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .search-icon {
+        position: absolute;
+        left: 1.25rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        color: $text-secondary;
+        pointer-events: none;
+    }
+
+    input {
+        width: 100%;
+        padding: 1rem 1.25rem 1rem 3.5rem;
+        font-size: 1rem;
+        color: $text-primary;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+
+        &:focus {
+            outline: none;
+            border-color: $accent-color;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 0 3px rgba(137, 92, 242, 0.1);
+        }
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+    }
+}
+
+// ═══════════════════════════════════════════════════════════
+// QUICK LINKS SECTION
+// ═══════════════════════════════════════════════════════════
+
+.quick-links-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+
+    @media (max-width: 768px) {
+        padding: 2rem 1.5rem;
+    }
+}
+
+.quick-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.quick-link-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: $text-secondary;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @media (max-width: 480px) {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    &:hover {
+        background: rgba(137, 92, 242, 0.1);
+        border-color: rgba(137, 92, 242, 0.3);
+        color: $text-primary;
+    }
+
+    &.active {
+        background: $accent-gradient;
+        border-color: transparent;
+        color: white;
+        font-weight: 600;
+    }
+}
+
+// ═══════════════════════════════════════════════════════════
+// FAQ CONTENT
+// ═══════════════════════════════════════════════════════════
+
+.faq-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.faq-category {
+    margin-bottom: 3rem;
+
+    &.hidden {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 2.5rem;
+    }
+
+    .category-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: $text-primary;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid rgba(137, 92, 242, 0.2);
+
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+// ═══════════════════════════════════════════════════════════
+// FAQ ITEM (ACCORDION)
+// ═══════════════════════════════════════════════════════════
+
+.faq-item {
+    background: linear-gradient(135deg, rgba(137, 92, 242, 0.03) 0%, rgba(236, 72, 153, 0.02) 100%);
+    border: 1px solid $glass-border;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+
+    &.hidden {
+        display: none;
+    }
+
+    &:hover {
+        border-color: rgba(137, 92, 242, 0.2);
+    }
+
+    &.active {
+        border-color: rgba(137, 92, 242, 0.3);
+        box-shadow: 0 4px 16px rgba(137, 92, 242, 0.1);
+
+        .faq-question {
+            color: $text-primary;
+            font-weight: 600;
+        }
+
+        .faq-icon {
+            transform: rotate(180deg);
+            color: $accent-color;
+        }
+
+        .faq-answer {
+            max-height: 1000px;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+    }
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: $text-primary;
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    &:hover {
+        color: $accent-color;
+    }
+
+    span {
+        flex: 1;
+    }
+}
+
+.faq-icon {
+    width: 20px;
+    height: 20px;
+    color: $text-secondary;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    padding: 0 1.5rem;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+    @media (max-width: 768px) {
+        padding: 0 1.25rem;
+    }
+
+    p {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+        color: $text-secondary;
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: $accent-color;
+            text-decoration: none;
+            font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    ul, ol {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+        color: $text-secondary;
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+
+        li {
+            margin-bottom: 0.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            strong {
+                color: $text-primary;
+                font-weight: 600;
+            }
+        }
+    }
+
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+}
+
+// ═══════════════════════════════════════════════════════════
+// HELP CTA SECTION
+// ═══════════════════════════════════════════════════════════
+
+.help-cta {
+    max-width: 800px;
+    margin: 4rem auto 0;
+    padding: 0 1.5rem;
+
+    @media (max-width: 768px) {
+        margin-top: 3rem;
+    }
+}
+
+.help-cta-content {
+    background: linear-gradient(135deg, rgba(137, 92, 242, 0.1) 0%, rgba(236, 72, 153, 0.08) 100%);
+    border: 1px solid rgba(137, 92, 242, 0.2);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+
+    @media (max-width: 768px) {
+        padding: 2.5rem 2rem;
+    }
+
+    .help-icon {
+        width: 64px;
+        height: 64px;
+        background: $accent-gradient;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+
+        svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        color: $text-primary;
+        margin-bottom: 0.75rem;
+    }
+
+    p {
+        font-size: 1.0625rem;
+        color: $text-secondary;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+}
+
+.help-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        @media (max-width: 480px) {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .btn-primary {
+        background: $accent-gradient;
+        color: white;
+        border: none;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(137, 92, 242, 0.3);
+        }
+    }
+
+    .btn-secondary {
+        background: rgba(255, 255, 255, 0.03);
+        color: $text-primary;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(137, 92, 242, 0.3);
+            transform: translateY(-2px);
+        }
+    }
+}
